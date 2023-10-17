@@ -1,11 +1,11 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Coupon;
+namespace Laravel\Cashier\Mollie\Tests\Coupon;
 
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Coupon\RedeemedCoupon;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Database\Factories\RedeemedCouponFactory;
+use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Mollie\Coupon\RedeemedCoupon;
+use Laravel\Cashier\Mollie\Tests\BaseTestCase;
+use Laravel\Cashier\Mollie\Tests\Database\Factories\RedeemedCouponFactory;
 
 class RedeemedCouponTest extends BaseTestCase
 {

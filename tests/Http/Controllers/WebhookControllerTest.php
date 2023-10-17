@@ -1,22 +1,22 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Http\Controllers;
+namespace Laravel\Cashier\Mollie\Tests\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Event;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Events\OrderPaymentFailed;
-use Laravel\Cashier\Events\OrderPaymentPaid;
-use Laravel\Cashier\Events\SubscriptionCancelled;
-use Laravel\Cashier\Http\Controllers\WebhookController;
+use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Mollie\Events\OrderPaymentFailed;
+use Laravel\Cashier\Mollie\Events\OrderPaymentPaid;
+use Laravel\Cashier\Mollie\Events\SubscriptionCancelled;
+use Laravel\Cashier\Mollie\Http\Controllers\WebhookController;
 use Laravel\Cashier\Mollie\Contracts\GetMolliePayment;
 use Laravel\Cashier\Mollie\Contracts\UpdateMolliePayment;
-use Laravel\Cashier\Order\OrderItemCollection;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Database\Factories\OrderFactory;
-use Laravel\Cashier\Tests\Database\Factories\SubscriptionFactory;
-use Laravel\Cashier\Tests\Fixtures\User;
-use Laravel\Cashier\Types\SubscriptionCancellationReason;
+use Laravel\Cashier\Mollie\Order\OrderItemCollection;
+use Laravel\Cashier\Mollie\Tests\BaseTestCase;
+use Laravel\Cashier\Mollie\Tests\Database\Factories\OrderFactory;
+use Laravel\Cashier\Mollie\Tests\Database\Factories\SubscriptionFactory;
+use Laravel\Cashier\Mollie\Tests\Fixtures\User;
+use Laravel\Cashier\Mollie\Types\SubscriptionCancellationReason;
 use Mollie\Api\Exceptions\ApiException;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Payment as MolliePayment;

@@ -1,24 +1,24 @@
 <?php
 
-namespace Laravel\Cashier\FirstPayment\Actions;
+namespace Laravel\Cashier\Mollie\FirstPayment\Actions;
 
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Cashier\Coupon\Coupon;
-use Laravel\Cashier\Order\OrderItemCollection;
+use Laravel\Cashier\Mollie\Coupon\Coupon;
+use Laravel\Cashier\Mollie\Order\OrderItemCollection;
 use Money\Currency;
 use Money\Money;
 
 class ApplySubscriptionCouponToPayment extends BaseNullAction
 {
     /**
-     * @var \Laravel\Cashier\Coupon\Coupon
+     * @var \Laravel\Cashier\Mollie\Coupon\Coupon
      */
     protected $coupon;
 
     /**
      * The coupon's (discount) OrderItems
      *
-     * @var \Laravel\Cashier\Order\OrderItemCollection
+     * @var \Laravel\Cashier\Mollie\Order\OrderItemCollection
      */
     protected $orderItems;
 
@@ -26,8 +26,8 @@ class ApplySubscriptionCouponToPayment extends BaseNullAction
      * ApplySubscriptionCouponToPayment constructor.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $owner
-     * @param  \Laravel\Cashier\Coupon\Coupon  $coupon
-     * @param  \Laravel\Cashier\Order\OrderItemCollection  $orderItems
+     * @param  \Laravel\Cashier\Mollie\Coupon\Coupon  $coupon
+     * @param  \Laravel\Cashier\Mollie\Order\OrderItemCollection  $orderItems
      */
     public function __construct(Model $owner, Coupon $coupon, OrderItemCollection $orderItems)
     {

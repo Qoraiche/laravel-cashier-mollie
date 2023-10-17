@@ -1,22 +1,22 @@
 <?php
 
-namespace Laravel\Cashier\Events;
+namespace Laravel\Cashier\Mollie\Events;
 
 use Illuminate\Queue\SerializesModels;
-use Laravel\Cashier\Coupon\AppliedCoupon;
-use Laravel\Cashier\Coupon\RedeemedCoupon;
+use Laravel\Cashier\Mollie\Coupon\AppliedCoupon;
+use Laravel\Cashier\Mollie\Coupon\RedeemedCoupon;
 
 class CouponApplied
 {
     use SerializesModels;
 
     /**
-     * @var \Laravel\Cashier\Coupon\RedeemedCoupon
+     * @var \Laravel\Cashier\Mollie\Coupon\RedeemedCoupon
      */
     public $redeemedCoupon;
 
     /**
-     * @var \Laravel\Cashier\Coupon\AppliedCoupon
+     * @var \Laravel\Cashier\Mollie\Coupon\AppliedCoupon
      */
     public $appliedCoupon;
 

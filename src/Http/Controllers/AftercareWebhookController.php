@@ -1,14 +1,14 @@
 <?php
 
-namespace Laravel\Cashier\Http\Controllers;
+namespace Laravel\Cashier\Mollie\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Event;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Events\ChargebackReceived;
-use Laravel\Cashier\Order\Order;
-use Laravel\Cashier\Refunds\Refund;
+use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Mollie\Events\ChargebackReceived;
+use Laravel\Cashier\Mollie\Order\Order;
+use Laravel\Cashier\Mollie\Refunds\Refund;
 use Mollie\Api\Resources\Payment as MolliePayment;
 use Mollie\Api\Resources\Refund as MollieRefund;
 use Mollie\Api\Types\RefundStatus;
@@ -59,7 +59,7 @@ class AftercareWebhookController extends BaseWebhookController
 
     protected function handleRefunds(Order $order, MolliePayment $molliePayment)
     {
-        /** @var \Laravel\Cashier\Refunds\RefundCollection $localRefunds */
+        /** @var \Laravel\Cashier\Mollie\Refunds\RefundCollection $localRefunds */
         $localRefunds = $order->refunds()->whereUnprocessed()->get();
         $mollieRefunds = collect($molliePayment->refunds());
 
@@ -90,7 +90,7 @@ class AftercareWebhookController extends BaseWebhookController
     }
 
     /**
-     * @param  \Laravel\Cashier\Refunds\Refund  $localRefund
+     * @param  \Laravel\Cashier\Mollie\Refunds\Refund  $localRefund
      * @param  \Illuminate\Support\Collection  $mollieRefunds
      * @return MollieRefund|null
      */

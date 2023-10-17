@@ -1,18 +1,18 @@
 <?php
 
-namespace Laravel\Cashier\Tests;
+namespace Laravel\Cashier\Mollie\Tests;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 use Illuminate\Support\Facades\Event;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Events\SubscriptionResumed;
+use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Mollie\Events\SubscriptionResumed;
 use Laravel\Cashier\Mollie\Contracts\GetMollieMandate;
 use Laravel\Cashier\Mollie\GetMollieCustomer;
-use Laravel\Cashier\Subscription;
-use Laravel\Cashier\Tests\Database\Factories\OrderItemFactory;
-use Laravel\Cashier\Tests\Database\Factories\SubscriptionFactory;
-use Laravel\Cashier\Tests\Fixtures\User;
+use Laravel\Cashier\Mollie\Subscription;
+use Laravel\Cashier\Mollie\Tests\Database\Factories\OrderItemFactory;
+use Laravel\Cashier\Mollie\Tests\Database\Factories\SubscriptionFactory;
+use Laravel\Cashier\Mollie\Tests\Fixtures\User;
 use LogicException;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Customer;
@@ -169,7 +169,7 @@ class SubscriptionTest extends BaseTestCase
         $this->assertNotNull($item_1);
         $this->assertSame('2018-01-01 00:00:00', $item_1->process_at->toDateTimeString());
         $this->assertSame(Cashier::$subscriptionModel, $item_1->orderable_type);
-        $this->assertSame("Laravel\Cashier\Tests\Fixtures\User", $item_1->owner_type);
+        $this->assertSame("Laravel\Cashier\Mollie\Tests\Fixtures\User", $item_1->owner_type);
         $this->assertSame(1, $item_1->orderable_id);
         $this->assertEquals(1, $item_1->owner_id);
         $this->assertSame('Monthly payment', $item_1->description);
@@ -194,7 +194,7 @@ class SubscriptionTest extends BaseTestCase
 
         $this->assertSame('2018-02-01 00:00:00', $item_2->process_at->toDateTimeString());
         $this->assertSame(Cashier::$subscriptionModel, $item_2->orderable_type);
-        $this->assertSame("Laravel\Cashier\Tests\Fixtures\User", $item_2->owner_type);
+        $this->assertSame("Laravel\Cashier\Mollie\Tests\Fixtures\User", $item_2->owner_type);
         $this->assertSame(1, $item_2->orderable_id);
         $this->assertEquals(1, $item_2->owner_id);
         $this->assertSame('Monthly payment', $item_2->description);
@@ -219,7 +219,7 @@ class SubscriptionTest extends BaseTestCase
 
         $this->assertSame('2018-03-01 00:00:00', $item_3->process_at->toDateTimeString());
         $this->assertSame(Cashier::$subscriptionModel, $item_3->orderable_type);
-        $this->assertSame("Laravel\Cashier\Tests\Fixtures\User", $item_3->owner_type);
+        $this->assertSame("Laravel\Cashier\Mollie\Tests\Fixtures\User", $item_3->owner_type);
         $this->assertSame(1, $item_3->orderable_id);
         $this->assertEquals(1, $item_3->owner_id);
         $this->assertSame('Monthly payment', $item_3->description);
@@ -252,7 +252,7 @@ class SubscriptionTest extends BaseTestCase
         $this->assertNotNull($item_1);
         $this->assertSame('2019-01-29 00:00:00', $item_1->process_at->toDateTimeString());
         $this->assertSame(Cashier::$subscriptionModel, $item_1->orderable_type);
-        $this->assertSame("Laravel\Cashier\Tests\Fixtures\User", $item_1->owner_type);
+        $this->assertSame("Laravel\Cashier\Mollie\Tests\Fixtures\User", $item_1->owner_type);
         $this->assertSame(1, $item_1->orderable_id);
         $this->assertEquals(1, $item_1->owner_id);
         $this->assertSame('Monthly payment', $item_1->description);
@@ -277,7 +277,7 @@ class SubscriptionTest extends BaseTestCase
 
         $this->assertSame('2019-02-28 00:00:00', $item_2->process_at->toDateTimeString());
         $this->assertSame(Cashier::$subscriptionModel, $item_2->orderable_type);
-        $this->assertSame("Laravel\Cashier\Tests\Fixtures\User", $item_2->owner_type);
+        $this->assertSame("Laravel\Cashier\Mollie\Tests\Fixtures\User", $item_2->owner_type);
         $this->assertSame(1, $item_2->orderable_id);
         $this->assertEquals(1, $item_2->owner_id);
         $this->assertSame('Monthly payment', $item_2->description);
@@ -302,7 +302,7 @@ class SubscriptionTest extends BaseTestCase
 
         $this->assertSame('2019-03-29 00:00:00', $item_3->process_at->toDateTimeString());
         $this->assertSame(Cashier::$subscriptionModel, $item_3->orderable_type);
-        $this->assertSame("Laravel\Cashier\Tests\Fixtures\User", $item_3->owner_type);
+        $this->assertSame("Laravel\Cashier\Mollie\Tests\Fixtures\User", $item_3->owner_type);
         $this->assertSame(1, $item_3->orderable_id);
         $this->assertEquals(1, $item_3->owner_id);
         $this->assertSame('Monthly payment', $item_3->description);
@@ -335,7 +335,7 @@ class SubscriptionTest extends BaseTestCase
         $this->assertNotNull($item_1);
         $this->assertSame('2019-01-31 00:00:00', $item_1->process_at->toDateTimeString());
         $this->assertSame(Cashier::$subscriptionModel, $item_1->orderable_type);
-        $this->assertSame("Laravel\Cashier\Tests\Fixtures\User", $item_1->owner_type);
+        $this->assertSame("Laravel\Cashier\Mollie\Tests\Fixtures\User", $item_1->owner_type);
         $this->assertSame(1, $item_1->orderable_id);
         $this->assertEquals(1, $item_1->owner_id);
         $this->assertSame('Monthly payment', $item_1->description);
@@ -360,7 +360,7 @@ class SubscriptionTest extends BaseTestCase
 
         $this->assertSame('2019-02-28 00:00:00', $item_2->process_at->toDateTimeString());
         $this->assertSame(Cashier::$subscriptionModel, $item_2->orderable_type);
-        $this->assertSame("Laravel\Cashier\Tests\Fixtures\User", $item_2->owner_type);
+        $this->assertSame("Laravel\Cashier\Mollie\Tests\Fixtures\User", $item_2->owner_type);
         $this->assertSame(1, $item_2->orderable_id);
         $this->assertEquals(1, $item_2->owner_id);
         $this->assertSame('Monthly payment', $item_2->description);
@@ -385,7 +385,7 @@ class SubscriptionTest extends BaseTestCase
 
         $this->assertSame('2019-03-31 00:00:00', $item_3->process_at->toDateTimeString());
         $this->assertSame(Cashier::$subscriptionModel, $item_3->orderable_type);
-        $this->assertSame("Laravel\Cashier\Tests\Fixtures\User", $item_3->owner_type);
+        $this->assertSame("Laravel\Cashier\Mollie\Tests\Fixtures\User", $item_3->owner_type);
         $this->assertSame(1, $item_3->orderable_id);
         $this->assertEquals(1, $item_3->owner_id);
         $this->assertSame('Monthly payment', $item_3->description);
@@ -410,7 +410,7 @@ class SubscriptionTest extends BaseTestCase
 
         $this->assertSame('2019-04-30 00:00:00', $item_4->process_at->toDateTimeString());
         $this->assertSame(Cashier::$subscriptionModel, $item_4->orderable_type);
-        $this->assertSame("Laravel\Cashier\Tests\Fixtures\User", $item_4->owner_type);
+        $this->assertSame("Laravel\Cashier\Mollie\Tests\Fixtures\User", $item_4->owner_type);
         $this->assertSame(1, $item_4->orderable_id);
         $this->assertEquals(1, $item_4->owner_id);
         $this->assertSame('Monthly payment', $item_4->description);

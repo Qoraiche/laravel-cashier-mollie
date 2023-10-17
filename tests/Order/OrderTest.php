@@ -1,30 +1,30 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Order;
+namespace Laravel\Cashier\Mollie\Tests\Order;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Event;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Events\BalanceTurnedStale;
-use Laravel\Cashier\Events\OrderCreated;
-use Laravel\Cashier\Events\OrderPaymentFailedDueToInvalidMandate;
-use Laravel\Cashier\Events\OrderProcessed;
-use Laravel\Cashier\Exceptions\AmountExceedsMolliePaymentMethodLimit;
+use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Mollie\Events\BalanceTurnedStale;
+use Laravel\Cashier\Mollie\Events\OrderCreated;
+use Laravel\Cashier\Mollie\Events\OrderPaymentFailedDueToInvalidMandate;
+use Laravel\Cashier\Mollie\Events\OrderProcessed;
+use Laravel\Cashier\Mollie\Exceptions\AmountExceedsMolliePaymentMethodLimit;
 use Laravel\Cashier\Mollie\Contracts\CreateMolliePayment;
 use Laravel\Cashier\Mollie\Contracts\GetMollieCustomer;
 use Laravel\Cashier\Mollie\Contracts\GetMollieMandate;
 use Laravel\Cashier\Mollie\Contracts\GetMollieMethodMinimumAmount;
 use Laravel\Cashier\Mollie\GetMollieMethodMaximumAmount;
-use Laravel\Cashier\Order\Invoice;
-use Laravel\Cashier\Order\Order;
-use Laravel\Cashier\Order\OrderCollection;
-use Laravel\Cashier\Order\OrderItemCollection;
-use Laravel\Cashier\Subscription;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Database\Factories\OrderFactory;
-use Laravel\Cashier\Tests\Database\Factories\OrderItemFactory;
-use Laravel\Cashier\Tests\Database\Factories\SubscriptionFactory;
-use Laravel\Cashier\Tests\Fixtures\User;
+use Laravel\Cashier\Mollie\Order\Invoice;
+use Laravel\Cashier\Mollie\Order\Order;
+use Laravel\Cashier\Mollie\Order\OrderCollection;
+use Laravel\Cashier\Mollie\Order\OrderItemCollection;
+use Laravel\Cashier\Mollie\Subscription;
+use Laravel\Cashier\Mollie\Tests\BaseTestCase;
+use Laravel\Cashier\Mollie\Tests\Database\Factories\OrderFactory;
+use Laravel\Cashier\Mollie\Tests\Database\Factories\OrderItemFactory;
+use Laravel\Cashier\Mollie\Tests\Database\Factories\SubscriptionFactory;
+use Laravel\Cashier\Mollie\Tests\Fixtures\User;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Customer;
 use Mollie\Api\Resources\Mandate;

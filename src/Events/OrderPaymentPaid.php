@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Events;
+namespace Laravel\Cashier\Mollie\Events;
 
 use Illuminate\Queue\SerializesModels;
 
@@ -11,14 +11,14 @@ class OrderPaymentPaid
     /**
      * The paid order.
      *
-     * @var \Laravel\Cashier\Order\Order
+     * @var \Laravel\Cashier\Mollie\Order\Order
      */
     public $order;
 
     /**
      * The paid payment.
      *
-     * @var \Laravel\Cashier\Payment
+     * @var \Laravel\Cashier\Mollie\Payment
      */
     public $payment;
 

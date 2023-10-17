@@ -2,26 +2,26 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Refunds;
+namespace Laravel\Cashier\Mollie\Refunds;
 
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Events\RefundInitiated;
+use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Mollie\Events\RefundInitiated;
 use Laravel\Cashier\Mollie\Contracts\CreateMollieRefund;
-use Laravel\Cashier\Order\Order;
-use Laravel\Cashier\Order\OrderItem;
-use Laravel\Cashier\Order\OrderItemCollection;
+use Laravel\Cashier\Mollie\Order\Order;
+use Laravel\Cashier\Mollie\Order\OrderItem;
+use Laravel\Cashier\Mollie\Order\OrderItemCollection;
 use LogicException;
 use Mollie\Api\Types\PaymentStatus;
 
 class RefundBuilder
 {
     /**
-     * @var \Laravel\Cashier\Order\Order
+     * @var \Laravel\Cashier\Mollie\Order\Order
      */
     protected Order $order;
 
     /**
-     * @var \Laravel\Cashier\Refunds\RefundItemCollection
+     * @var \Laravel\Cashier\Mollie\Refunds\RefundItemCollection
      */
     protected RefundItemCollection $items;
 

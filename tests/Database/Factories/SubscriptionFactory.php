@@ -1,11 +1,11 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Database\Factories;
+namespace Laravel\Cashier\Mollie\Tests\Database\Factories;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Tests\Fixtures\User;
+use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Mollie\Tests\Fixtures\User;
 
 class SubscriptionFactory extends Factory
 {

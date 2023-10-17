@@ -1,19 +1,19 @@
 <?php
 
-namespace Laravel\Cashier\Tests;
+namespace Laravel\Cashier\Mollie\Tests;
 
 use Illuminate\Support\Facades\Event;
-use Laravel\Cashier\Coupon\RedeemedCouponCollection;
-use Laravel\Cashier\Tests\Database\Factories\OrderFactory;
-use Laravel\Cashier\Tests\Database\Factories\RedeemedCouponFactory;
-use Laravel\Cashier\Events\MandateClearedFromBillable;
-use Laravel\Cashier\Exceptions\MandateIsNotYetFinalizedException;
+use Laravel\Cashier\Mollie\Coupon\RedeemedCouponCollection;
+use Laravel\Cashier\Mollie\Tests\Database\Factories\OrderFactory;
+use Laravel\Cashier\Mollie\Tests\Database\Factories\RedeemedCouponFactory;
+use Laravel\Cashier\Mollie\Events\MandateClearedFromBillable;
+use Laravel\Cashier\Mollie\Exceptions\MandateIsNotYetFinalizedException;
 use Laravel\Cashier\Mollie\Contracts\GetMollieCustomer;
 use Laravel\Cashier\Mollie\Contracts\GetMollieMandate;
-use Laravel\Cashier\Order\Invoice;
-use Laravel\Cashier\SubscriptionBuilder\FirstPaymentSubscriptionBuilder;
-use Laravel\Cashier\SubscriptionBuilder\MandatedSubscriptionBuilder;
-use Laravel\Cashier\Tests\Fixtures\User;
+use Laravel\Cashier\Mollie\Order\Invoice;
+use Laravel\Cashier\Mollie\SubscriptionBuilder\FirstPaymentSubscriptionBuilder;
+use Laravel\Cashier\Mollie\SubscriptionBuilder\MandatedSubscriptionBuilder;
+use Laravel\Cashier\Mollie\Tests\Fixtures\User;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Customer;
 use Mollie\Api\Resources\Mandate;

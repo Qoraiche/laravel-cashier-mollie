@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Cashier\Charge;
+namespace Laravel\Cashier\Mollie\Charge;
 
-use Laravel\Cashier\Charge\Contracts\ChargeBuilder;
+use Laravel\Cashier\Mollie\Charge\Contracts\ChargeBuilder;
 
 trait ManagesCharges
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Cashier\MandatedPayment;
+namespace Laravel\Cashier\Mollie\MandatedPayment;
 
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Cashier\Cashier;
+use Laravel\Cashier\Mollie\Cashier;
 use Laravel\Cashier\Mollie\Contracts\CreateMolliePayment;
 use Mollie\Api\Types\SequenceType;
 use Money\Money;

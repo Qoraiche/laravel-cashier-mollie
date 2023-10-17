@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Fixtures;
+namespace Laravel\Cashier\Mollie\Tests\Fixtures;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Cashier\Billable;
-use Laravel\Cashier\Order\Contracts\ProvidesInvoiceInformation;
-use Laravel\Cashier\Tests\Database\Factories\UserFactory;
+use Laravel\Cashier\Mollie\Billable;
+use Laravel\Cashier\Mollie\Order\Contracts\ProvidesInvoiceInformation;
+use Laravel\Cashier\Mollie\Tests\Database\Factories\UserFactory;
 
 class User extends Model implements ProvidesInvoiceInformation
 {

@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Cashier\Tests;
+namespace Laravel\Cashier\Mollie\Tests;
 
 use Illuminate\Support\Facades\Event;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Events\OrderInvoiceAvailable;
-use Laravel\Cashier\Events\OrderPaymentPaid;
-use Laravel\Cashier\Tests\Database\Factories\OrderFactory;
+use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Mollie\Events\OrderInvoiceAvailable;
+use Laravel\Cashier\Mollie\Events\OrderPaymentPaid;
+use Laravel\Cashier\Mollie\Tests\Database\Factories\OrderFactory;
 
 class EventServiceProviderTest extends BaseTestCase
 {

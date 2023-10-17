@@ -1,29 +1,29 @@
 <?php
 
-namespace Laravel\Cashier;
+namespace Laravel\Cashier\Mollie;
 
 use Carbon\Carbon;
 use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Event;
-use Laravel\Cashier\Coupon\AppliedCoupon;
-use Laravel\Cashier\Coupon\Contracts\AcceptsCoupons;
-use Laravel\Cashier\Events\SubscriptionCancelled;
-use Laravel\Cashier\Events\SubscriptionPlanSwapped;
-use Laravel\Cashier\Events\SubscriptionQuantityUpdated;
-use Laravel\Cashier\Events\SubscriptionResumed;
-use Laravel\Cashier\Events\SubscriptionStarted;
-use Laravel\Cashier\Order\Contracts\InteractsWithOrderItems;
-use Laravel\Cashier\Order\Contracts\PreprocessesOrderItems;
-use Laravel\Cashier\Order\OrderItem;
-use Laravel\Cashier\Order\OrderItemCollection;
-use Laravel\Cashier\Plan\Contracts\Plan;
-use Laravel\Cashier\Plan\Contracts\PlanRepository;
-use Laravel\Cashier\Refunds\Contracts\IsRefundable;
-use Laravel\Cashier\Refunds\RefundItem;
-use Laravel\Cashier\Traits\HasOwner;
-use Laravel\Cashier\Types\SubscriptionCancellationReason;
+use Laravel\Cashier\Mollie\Coupon\AppliedCoupon;
+use Laravel\Cashier\Mollie\Coupon\Contracts\AcceptsCoupons;
+use Laravel\Cashier\Mollie\Events\SubscriptionCancelled;
+use Laravel\Cashier\Mollie\Events\SubscriptionPlanSwapped;
+use Laravel\Cashier\Mollie\Events\SubscriptionQuantityUpdated;
+use Laravel\Cashier\Mollie\Events\SubscriptionResumed;
+use Laravel\Cashier\Mollie\Events\SubscriptionStarted;
+use Laravel\Cashier\Mollie\Order\Contracts\InteractsWithOrderItems;
+use Laravel\Cashier\Mollie\Order\Contracts\PreprocessesOrderItems;
+use Laravel\Cashier\Mollie\Order\OrderItem;
+use Laravel\Cashier\Mollie\Order\OrderItemCollection;
+use Laravel\Cashier\Mollie\Plan\Contracts\Plan;
+use Laravel\Cashier\Mollie\Plan\Contracts\PlanRepository;
+use Laravel\Cashier\Mollie\Refunds\Contracts\IsRefundable;
+use Laravel\Cashier\Mollie\Refunds\RefundItem;
+use Laravel\Cashier\Mollie\Traits\HasOwner;
+use Laravel\Cashier\Mollie\Types\SubscriptionCancellationReason;
 use LogicException;
 use Money\Currency;
 use Money\Money;
@@ -468,8 +468,8 @@ class Subscription extends Model implements InteractsWithOrderItems, Preprocesse
      * @param  Carbon|null  $process_at
      * @param  array  $item_overrides
      * @param  bool  $fill_link Indicates whether scheduled_order_item_id field should be filled to point to the newly scheduled order item
-     * @param  \Laravel\Cashier\Plan\Contracts\Plan  $plan
-     * @return \Illuminate\Database\Eloquent\Model|\Laravel\Cashier\Order\OrderItem
+     * @param  \Laravel\Cashier\Mollie\Plan\Contracts\Plan  $plan
+     * @return \Illuminate\Database\Eloquent\Model|\Laravel\Cashier\Mollie\Order\OrderItem
      */
     public function scheduleNewOrderItemAt(Carbon $process_at, $item_overrides = [], $fill_link = true, Plan $plan = null)
     {
@@ -508,7 +508,7 @@ class Subscription extends Model implements InteractsWithOrderItems, Preprocesse
      * Called right before processing the order item into an order.
      *
      * @param  OrderItem  $item
-     * @return \Laravel\Cashier\Order\OrderItemCollection
+     * @return \Laravel\Cashier\Mollie\Order\OrderItemCollection
      */
     public static function preprocessOrderItem(OrderItem $item)
     {
@@ -583,7 +583,7 @@ class Subscription extends Model implements InteractsWithOrderItems, Preprocesse
     /**
      * Get the plan instance for this subscription.
      *
-     * @return \Laravel\Cashier\Plan\Plan
+     * @return \Laravel\Cashier\Mollie\Plan\Plan
      */
     public function plan()
     {
@@ -593,7 +593,7 @@ class Subscription extends Model implements InteractsWithOrderItems, Preprocesse
     /**
      * Get the plan instance for this subscription's next cycle.
      *
-     * @return \Laravel\Cashier\Plan\Plan
+     * @return \Laravel\Cashier\Mollie\Plan\Plan
      */
     public function nextPlan()
     {
@@ -615,7 +615,7 @@ class Subscription extends Model implements InteractsWithOrderItems, Preprocesse
     /**
      * Handle a failed payment.
      *
-     * @param  \Laravel\Cashier\Order\OrderItem  $item
+     * @param  \Laravel\Cashier\Mollie\Order\OrderItem  $item
      * @return void
      */
     public static function handlePaymentFailed(OrderItem $item)
@@ -630,7 +630,7 @@ class Subscription extends Model implements InteractsWithOrderItems, Preprocesse
     /**
      * Handle a paid payment.
      *
-     * @param  \Laravel\Cashier\Order\OrderItem  $item
+     * @param  \Laravel\Cashier\Mollie\Order\OrderItem  $item
      * @return void
      */
     public static function handlePaymentPaid(OrderItem $item)
@@ -660,7 +660,7 @@ class Subscription extends Model implements InteractsWithOrderItems, Preprocesse
      *
      * @param  int  $count
      * @param  bool  $invoiceNow
-     * @return \Laravel\Cashier\Subscription
+     * @return \Laravel\Cashier\Mollie\Subscription
      *
      * @throws \Throwable
      */
@@ -673,7 +673,7 @@ class Subscription extends Model implements InteractsWithOrderItems, Preprocesse
      * Increment the quantity of the subscription, and invoice immediately.
      *
      * @param  int  $count
-     * @return \Laravel\Cashier\Subscription
+     * @return \Laravel\Cashier\Mollie\Subscription
      *
      * @throws \Throwable
      */
@@ -687,7 +687,7 @@ class Subscription extends Model implements InteractsWithOrderItems, Preprocesse
      *
      * @param  int  $count
      * @param  bool  $invoiceNow
-     * @return \Laravel\Cashier\Subscription
+     * @return \Laravel\Cashier\Mollie\Subscription
      *
      * @throws \Throwable
      */
@@ -775,7 +775,7 @@ class Subscription extends Model implements InteractsWithOrderItems, Preprocesse
             ->subtract($latestProcessedOrderItem->getTax()); // tax calculated elsewhere
 
         // Subtract any refunds
-        /** @var \Laravel\Cashier\Refunds\RefundItemCollection $refundItems */
+        /** @var \Laravel\Cashier\Mollie\Refunds\RefundItemCollection $refundItems */
         $refundItems = Cashier::$refundItemModel::where('original_order_item_id', $latestProcessedOrderItem->id)->get();
 
         if ($refundItems->isNotEmpty()) {
@@ -810,7 +810,7 @@ class Subscription extends Model implements InteractsWithOrderItems, Preprocesse
 
     /**
      * @param  \Carbon\Carbon|null  $now
-     * @return null|\Laravel\Cashier\Order\OrderItem
+     * @return null|\Laravel\Cashier\Mollie\Order\OrderItem
      */
     protected function reimburseUnusedTime(?Carbon $now = null)
     {
@@ -840,7 +840,7 @@ class Subscription extends Model implements InteractsWithOrderItems, Preprocesse
      * @param  \Closure  $applyNewSettings
      * @param  \Carbon\Carbon|null  $now
      * @param  bool  $invoiceNow
-     * @return \Laravel\Cashier\Subscription
+     * @return \Laravel\Cashier\Mollie\Subscription
      */
     public function restartCycleWithModifications(\Closure $applyNewSettings, ?Carbon $now = null, $invoiceNow = true)
     {
@@ -889,7 +889,7 @@ class Subscription extends Model implements InteractsWithOrderItems, Preprocesse
      *
      * @param  \Carbon\Carbon|null  $now
      * @param  bool  $invoiceNow
-     * @return \Laravel\Cashier\Subscription
+     * @return \Laravel\Cashier\Mollie\Subscription
      */
     public function restartCycle(?Carbon $now = null, $invoiceNow = true)
     {

@@ -46,12 +46,12 @@
       "src/Helpers/helpers.php"
     ],
     "psr-4": {
-      "Laravel\\Cashier\\": "src"
+      "Laravel\\Cashier\\Mollie\\": "src"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Laravel\\Cashier\\Tests\\": "tests"
+      "Laravel\\Cashier\\Mollie\\Tests\\": "tests"
     }
   },
   "extra": {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Laravel\Cashier\FirstPayment;
+namespace Laravel\Cashier\Mollie\FirstPayment;
 
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Support\Facades\DB;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Events\MandateUpdated;
-use Laravel\Cashier\FirstPayment\Actions\BaseAction;
-use Laravel\Cashier\Order\OrderItemCollection;
+use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Mollie\Events\MandateUpdated;
+use Laravel\Cashier\Mollie\FirstPayment\Actions\BaseAction;
+use Laravel\Cashier\Mollie\Order\OrderItemCollection;
 use Mollie\Api\Resources\Payment as MolliePayment;
 
 class FirstPaymentHandler
@@ -36,7 +36,7 @@ class FirstPaymentHandler
     /**
      * Execute all actions for the mandate payment and return the created Order.
      *
-     * @return \Laravel\Cashier\Order\Order
+     * @return \Laravel\Cashier\Mollie\Order\Order
      */
     public function execute()
     {
@@ -115,7 +115,7 @@ class FirstPaymentHandler
      * Execute the Actions and return a collection of the resulting OrderItems.
      * These OrderItems are already paid for using the mandate payment.
      *
-     * @return \Laravel\Cashier\Order\OrderItemCollection
+     * @return \Laravel\Cashier\Mollie\Order\OrderItemCollection
      */
     protected function executeActions()
     {

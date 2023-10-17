@@ -1,13 +1,13 @@
 <?php
 
-namespace Laravel\Cashier\Plan\Contracts;
+namespace Laravel\Cashier\Mollie\Plan\Contracts;
 
-use Laravel\Cashier\Subscription;
+use Laravel\Cashier\Mollie\Subscription;
 
 interface IntervalGeneratorContract
 {
     /**
-     * @param  \Laravel\Cashier\Subscription  $subscription
+     * @param  \Laravel\Cashier\Mollie\Subscription  $subscription
      * @return \Carbon\Carbon
      */
     public function getEndOfNextSubscriptionCycle(Subscription $subscription = null);

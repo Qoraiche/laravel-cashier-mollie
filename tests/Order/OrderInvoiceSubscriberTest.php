@@ -1,16 +1,16 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Order;
+namespace Laravel\Cashier\Mollie\Tests\Order;
 
 use Illuminate\Support\Facades\Event;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Events\FirstPaymentPaid;
-use Laravel\Cashier\Events\OrderInvoiceAvailable;
-use Laravel\Cashier\Events\OrderPaymentPaid;
-use Laravel\Cashier\Order\OrderInvoiceSubscriber;
-use Laravel\Cashier\Payment as CashierPayment;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Database\Factories\OrderFactory;
+use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Mollie\Events\FirstPaymentPaid;
+use Laravel\Cashier\Mollie\Events\OrderInvoiceAvailable;
+use Laravel\Cashier\Mollie\Events\OrderPaymentPaid;
+use Laravel\Cashier\Mollie\Order\OrderInvoiceSubscriber;
+use Laravel\Cashier\Mollie\Payment as CashierPayment;
+use Laravel\Cashier\Mollie\Tests\BaseTestCase;
+use Laravel\Cashier\Mollie\Tests\Database\Factories\OrderFactory;
 use Mollie\Api\Resources\Payment;
 
 class OrderInvoiceSubscriberTest extends BaseTestCase

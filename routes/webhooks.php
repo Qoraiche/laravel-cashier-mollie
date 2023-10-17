@@ -1,12 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Http\Controllers\AftercareWebhookController;
-use Laravel\Cashier\Http\Controllers\FirstPaymentWebhookController;
-use Laravel\Cashier\Http\Controllers\WebhookController;
+use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Mollie\Http\Controllers\AftercareWebhookController;
+use Laravel\Cashier\Mollie\Http\Controllers\FirstPaymentWebhookController;
+use Laravel\Cashier\Mollie\Http\Controllers\WebhookController;
 
-Route::namespace('\Laravel\Cashier\Http\Controllers')->group(function () {
+Route::namespace('\Laravel\Cashier\Mollie\Http\Controllers')->group(function () {
     Route::name('webhooks.mollie.default')->post(
         Cashier::webhookUrl(),
         [WebhookController::class, 'handleWebhook']

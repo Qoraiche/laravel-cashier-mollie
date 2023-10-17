@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Fixtures;
+namespace Laravel\Cashier\Mollie\Tests\Fixtures;
 
-use Laravel\Cashier\Credit\Credit as CashierCredit;
+use Laravel\Cashier\Mollie\Credit\Credit as CashierCredit;
 
 class Credit extends CashierCredit
 {

@@ -1,13 +1,13 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Order;
+namespace Laravel\Cashier\Mollie\Tests\Order;
 
 use Illuminate\Support\Collection;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Order\OrderItemCollection;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Database\Factories\OrderItemFactory;
-use Laravel\Cashier\Tests\Fixtures\User;
+use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Mollie\Order\OrderItemCollection;
+use Laravel\Cashier\Mollie\Tests\BaseTestCase;
+use Laravel\Cashier\Mollie\Tests\Database\Factories\OrderItemFactory;
+use Laravel\Cashier\Mollie\Tests\Fixtures\User;
 
 class OrderItemCollectionTest extends BaseTestCase
 {
@@ -186,8 +186,8 @@ class OrderItemCollectionTest extends BaseTestCase
         $this->assertEquals(2, $result->count());
 
         $this->assertEquals([
-            'Laravel\Cashier\Tests\Fixtures\User_1',
-            'Laravel\Cashier\Tests\Fixtures\User_2',
+            'Laravel\Cashier\Mollie\Tests\Fixtures\User_1',
+            'Laravel\Cashier\Mollie\Tests\Fixtures\User_2',
         ], $result->keys()->all());
 
         $result->flatten()->each(function ($item) {
@@ -241,9 +241,9 @@ class OrderItemCollectionTest extends BaseTestCase
         $this->assertEquals(3, $result->count());
 
         $this->assertEquals([
-            'Laravel\Cashier\Tests\Fixtures\User_1_USD',
-            'Laravel\Cashier\Tests\Fixtures\User_2_EUR',
-            'Laravel\Cashier\Tests\Fixtures\User_2_USD',
+            'Laravel\Cashier\Mollie\Tests\Fixtures\User_1_USD',
+            'Laravel\Cashier\Mollie\Tests\Fixtures\User_2_EUR',
+            'Laravel\Cashier\Mollie\Tests\Fixtures\User_2_USD',
         ], $result->keys()->all());
     }
 

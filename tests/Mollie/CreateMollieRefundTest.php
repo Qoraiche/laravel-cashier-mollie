@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Tests\Mollie;
+namespace Laravel\Cashier\Mollie\Tests\Mollie;
 
 use Laravel\Cashier\Mollie\Contracts\CreateMollieRefund;
 use Mollie\Api\Resources\Refund;

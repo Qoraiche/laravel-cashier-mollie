@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Cashier\Charge\Contracts;
+namespace Laravel\Cashier\Mollie\Charge\Contracts;
 
-use Laravel\Cashier\Charge\ChargeItem;
-use Laravel\Cashier\Charge\ChargeItemCollection;
+use Laravel\Cashier\Mollie\Charge\ChargeItem;
+use Laravel\Cashier\Mollie\Charge\ChargeItemCollection;
 
 interface ChargeBuilder
 {

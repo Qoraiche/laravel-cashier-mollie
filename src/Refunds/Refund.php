@@ -2,18 +2,18 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Refunds;
+namespace Laravel\Cashier\Mollie\Refunds;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Facades\DB;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Events\RefundFailed;
-use Laravel\Cashier\Events\RefundProcessed;
-use Laravel\Cashier\Order\Order;
-use Laravel\Cashier\Traits\HasOwner;
+use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Mollie\Events\RefundFailed;
+use Laravel\Cashier\Mollie\Events\RefundProcessed;
+use Laravel\Cashier\Mollie\Order\Order;
+use Laravel\Cashier\Mollie\Traits\HasOwner;
 use Mollie\Api\Types\RefundStatus;
 
 /**
@@ -25,7 +25,7 @@ use Mollie\Api\Types\RefundStatus;
  * @property int|null original_order_item_id
  * @property int|null original_order_id
  * @property int|null order_id
- * @property \Laravel\Cashier\Refunds\RefundItemCollection items
+ * @property \Laravel\Cashier\Mollie\Refunds\RefundItemCollection items
  * @property Order order
  * @property Order originalOrder
  */
@@ -43,7 +43,7 @@ class Refund extends Model
      * Create a new Refund Collection instance.
      *
      * @param  array  $models
-     * @return \Laravel\Cashier\Refunds\RefundCollection
+     * @return \Laravel\Cashier\Mollie\Refunds\RefundCollection
      */
     public function newCollection(array $models = [])
     {

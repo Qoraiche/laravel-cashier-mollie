@@ -1,17 +1,17 @@
 <?php
 
-namespace Laravel\Cashier\Tests;
+namespace Laravel\Cashier\Mollie\Tests;
 
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Illuminate\Support\Collection;
-use Laravel\Cashier\Coupon\Contracts\CouponRepository;
-use Laravel\Cashier\Coupon\Coupon;
-use Laravel\Cashier\Coupon\CouponOrderItemPreprocessor;
-use Laravel\Cashier\Coupon\FixedDiscountHandler;
-use Laravel\Cashier\Plan\AdvancedIntervalGenerator;
-use Laravel\Cashier\Tests\Database\Migrations\CreateUsersTable;
-use Laravel\Cashier\Tests\Fixtures\User;
+use Laravel\Cashier\Mollie\Coupon\Contracts\CouponRepository;
+use Laravel\Cashier\Mollie\Coupon\Coupon;
+use Laravel\Cashier\Mollie\Coupon\CouponOrderItemPreprocessor;
+use Laravel\Cashier\Mollie\Coupon\FixedDiscountHandler;
+use Laravel\Cashier\Mollie\Plan\AdvancedIntervalGenerator;
+use Laravel\Cashier\Mollie\Tests\Database\Migrations\CreateUsersTable;
+use Laravel\Cashier\Mollie\Tests\Fixtures\User;
 use Mockery;
 use Mollie\Api\MollieApiClient;
 use Mollie\Laravel\Wrappers\MollieApiWrapper;
@@ -48,7 +48,7 @@ abstract class BaseTestCase extends TestCase
      */
     protected function getPackageProviders($app)
     {
-        return ['Laravel\Cashier\CashierServiceProvider'];
+        return ['Laravel\Cashier\Mollie\CashierServiceProvider'];
     }
 
     /**
@@ -157,7 +157,7 @@ abstract class BaseTestCase extends TestCase
      */
     protected function withFixtureModels()
     {
-        config(['cashier.billable_model' => 'Laravel\Cashier\Tests\Fixtures\User']);
+        config(['cashier.billable_model' => 'Laravel\Cashier\Mollie\Tests\Fixtures\User']);
 
         return $this;
     }
@@ -391,7 +391,7 @@ abstract class BaseTestCase extends TestCase
     }
 
     /**
-     * @param  \Laravel\Cashier\Coupon\Coupon  $coupon
+     * @param  \Laravel\Cashier\Mollie\Coupon\Coupon  $coupon
      * @param  null  $couponHandler
      * @param  null  $context
      * @return CouponRepository The mocked coupon repository
@@ -426,7 +426,7 @@ abstract class BaseTestCase extends TestCase
     }
 
     /**
-     * @param  \Laravel\Cashier\Coupon\Coupon  $coupon
+     * @param  \Laravel\Cashier\Mollie\Coupon\Coupon  $coupon
      * @param  null  $couponHandler
      * @param  null  $context
      * @return CouponRepository The mocked coupon repository

@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Order;
+namespace Laravel\Cashier\Mollie\Tests\Order;
 
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Order\OrderItemCollection;
-use Laravel\Cashier\Order\OrderItemPreprocessorCollection;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Database\Factories\OrderItemFactory;
+use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Mollie\Order\OrderItemCollection;
+use Laravel\Cashier\Mollie\Order\OrderItemPreprocessorCollection;
+use Laravel\Cashier\Mollie\Tests\BaseTestCase;
+use Laravel\Cashier\Mollie\Tests\Database\Factories\OrderItemFactory;
 
 class OrderItemPreprocessorCollectionTest extends BaseTestCase
 {
@@ -52,8 +52,8 @@ class OrderItemPreprocessorCollectionTest extends BaseTestCase
     }
 
     /**
-     * @param  \Laravel\Cashier\Order\OrderItemCollection  $items
-     * @return \Laravel\Cashier\Tests\Order\FakeOrderItemPreprocessor
+     * @param  \Laravel\Cashier\Mollie\Order\OrderItemCollection  $items
+     * @return \Laravel\Cashier\Mollie\Tests\Order\FakeOrderItemPreprocessor
      */
     protected function getFakePreprocessor(OrderItemCollection $items)
     {

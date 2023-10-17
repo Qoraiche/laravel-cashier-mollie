@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Cashier\Order;
+namespace Laravel\Cashier\Mollie\Order;
 
 class PersistOrderItemsPreprocessor extends BaseOrderItemPreprocessor
 {
     /**
-     * @param  \Laravel\Cashier\Order\OrderItemCollection  $items
-     * @return \Laravel\Cashier\Order\OrderItemCollection
+     * @param  \Laravel\Cashier\Mollie\Order\OrderItemCollection  $items
+     * @return \Laravel\Cashier\Mollie\Order\OrderItemCollection
      */
     public function handle(OrderItemCollection $items)
     {

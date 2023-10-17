@@ -1,26 +1,26 @@
 <?php
 
-namespace Laravel\Cashier\Tests\SubscriptionBuilder;
+namespace Laravel\Cashier\Mollie\Tests\SubscriptionBuilder;
 
 use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Event;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Events\FirstPaymentPaid;
-use Laravel\Cashier\Events\OrderProcessed;
-use Laravel\Cashier\Events\SubscriptionStarted;
-use Laravel\Cashier\Exceptions\CouponException;
-use Laravel\Cashier\FirstPayment\Actions\AddGenericOrderItem;
-use Laravel\Cashier\FirstPayment\Actions\StartSubscription;
+use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Mollie\Events\FirstPaymentPaid;
+use Laravel\Cashier\Mollie\Events\OrderProcessed;
+use Laravel\Cashier\Mollie\Events\SubscriptionStarted;
+use Laravel\Cashier\Mollie\Exceptions\CouponException;
+use Laravel\Cashier\Mollie\FirstPayment\Actions\AddGenericOrderItem;
+use Laravel\Cashier\Mollie\FirstPayment\Actions\StartSubscription;
 use Laravel\Cashier\Mollie\Contracts\CreateMolliePayment;
 use Laravel\Cashier\Mollie\Contracts\GetMollieCustomer;
 use Laravel\Cashier\Mollie\Contracts\GetMollieMandate;
 use Laravel\Cashier\Mollie\Contracts\GetMolliePayment;
 use Laravel\Cashier\Mollie\Contracts\UpdateMolliePayment;
-use Laravel\Cashier\Order\Order;
-use Laravel\Cashier\SubscriptionBuilder\FirstPaymentSubscriptionBuilder;
-use Laravel\Cashier\SubscriptionBuilder\RedirectToCheckoutResponse;
-use Laravel\Cashier\Tests\BaseTestCase;
+use Laravel\Cashier\Mollie\Order\Order;
+use Laravel\Cashier\Mollie\SubscriptionBuilder\FirstPaymentSubscriptionBuilder;
+use Laravel\Cashier\Mollie\SubscriptionBuilder\RedirectToCheckoutResponse;
+use Laravel\Cashier\Mollie\Tests\BaseTestCase;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Customer;
 use Mollie\Api\Resources\Mandate;
@@ -89,7 +89,7 @@ class FirstPaymentSubscriptionBuilderTest extends BaseTestCase
         ], $payload);
         $localPayment = Cashier::$paymentModel::find(1);
         $this->assertEquals('Monthly payment', $localPayment->first_payment_actions[0]->description);
-        $this->assertEquals('Laravel\\Cashier\\FirstPayment\\Actions\\StartSubscription', $localPayment->first_payment_actions[0]->handler);
+        $this->assertEquals('Laravel\\Cashier\\Mollie\\FirstPayment\\Actions\\StartSubscription', $localPayment->first_payment_actions[0]->handler);
         $this->assertEquals('EUR', $localPayment->first_payment_actions[0]->subtotal->currency);
         $this->assertEquals(0, $localPayment->first_payment_actions[0]->subtotal->value);
         $this->assertEquals(20, $localPayment->first_payment_actions[0]->taxPercentage);
@@ -100,7 +100,7 @@ class FirstPaymentSubscriptionBuilderTest extends BaseTestCase
         $this->assertEquals(now()->addDays(5)->toIso8601String(), $localPayment->first_payment_actions[0]->trialUntil);
 
         $this->assertEquals('Test mandate payment', $localPayment->first_payment_actions[1]->description);
-        $this->assertEquals('Laravel\\Cashier\\FirstPayment\\Actions\\AddGenericOrderItem', $localPayment->first_payment_actions[1]->handler);
+        $this->assertEquals('Laravel\\Cashier\\Mollie\\FirstPayment\\Actions\\AddGenericOrderItem', $localPayment->first_payment_actions[1]->handler);
         $this->assertEquals('EUR', $localPayment->first_payment_actions[1]->unit_price->currency);
         $this->assertEquals(0.04, $localPayment->first_payment_actions[1]->unit_price->value);
         $this->assertEquals(20, $localPayment->first_payment_actions[1]->taxPercentage);
@@ -302,7 +302,7 @@ class FirstPaymentSubscriptionBuilderTest extends BaseTestCase
     }
 
     /**
-     * @return \Laravel\Cashier\SubscriptionBuilder\FirstPaymentSubscriptionBuilder
+     * @return \Laravel\Cashier\Mollie\SubscriptionBuilder\FirstPaymentSubscriptionBuilder
      */
     protected function getBuilder()
     {

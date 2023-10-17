@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Cashier\Http\Controllers;
+namespace Laravel\Cashier\Mollie\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Laravel\Cashier\Cashier;
+use Laravel\Cashier\Mollie\Cashier;
 use Laravel\Cashier\Mollie\Contracts\UpdateMolliePayment;
 use Mollie\Api\Resources\Payment;
 use Mollie\Api\Types\PaymentStatus;
@@ -50,7 +50,7 @@ class WebhookController extends BaseWebhookController
 
     /**
      * @param  \Mollie\Api\Resources\Payment  $payment
-     * @return \Laravel\Cashier\Order\Order|null
+     * @return \Laravel\Cashier\Mollie\Order\Order|null
      */
     protected function getOrder(Payment $payment)
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Order\Contracts;
+namespace Laravel\Cashier\Mollie\Order\Contracts;
 
 interface ProvidesInvoiceInformation
 {

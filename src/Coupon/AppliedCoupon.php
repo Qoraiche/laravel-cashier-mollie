@@ -1,16 +1,16 @@
 <?php
 
-namespace Laravel\Cashier\Coupon;
+namespace Laravel\Cashier\Mollie\Coupon;
 
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Order\Contracts\InteractsWithOrderItems;
-use Laravel\Cashier\Order\OrderItem;
+use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Mollie\Order\Contracts\InteractsWithOrderItems;
+use Laravel\Cashier\Mollie\Order\OrderItem;
 
 /**
  * @method static create(array $array)
  *
- * @property \Laravel\Cashier\Order\OrderItemCollection $orderItems
+ * @property \Laravel\Cashier\Mollie\Order\OrderItemCollection $orderItems
  */
 class AppliedCoupon extends Model implements InteractsWithOrderItems
 {
@@ -45,7 +45,7 @@ class AppliedCoupon extends Model implements InteractsWithOrderItems
      * Called right before processing the order item into an order.
      *
      * @param  OrderItem  $item
-     * @return \Laravel\Cashier\Order\OrderItemCollection
+     * @return \Laravel\Cashier\Mollie\Order\OrderItemCollection
      */
     public static function preprocessOrderItem(OrderItem $item)
     {

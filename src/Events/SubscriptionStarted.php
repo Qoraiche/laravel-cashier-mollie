@@ -1,16 +1,16 @@
 <?php
 
-namespace Laravel\Cashier\Events;
+namespace Laravel\Cashier\Mollie\Events;
 
 use Illuminate\Queue\SerializesModels;
-use Laravel\Cashier\Subscription;
+use Laravel\Cashier\Mollie\Subscription;
 
 class SubscriptionStarted
 {
     use SerializesModels;
 
     /**
-     * @var \Laravel\Cashier\Subscription
+     * @var \Laravel\Cashier\Mollie\Subscription
      */
     public $subscription;
 

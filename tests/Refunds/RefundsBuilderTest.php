@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Tests\Refunds;
+namespace Laravel\Cashier\Mollie\Tests\Refunds;
 
 use Illuminate\Support\Facades\Event;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Events\RefundInitiated;
+use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Mollie\Events\RefundInitiated;
 use Laravel\Cashier\Mollie\Contracts\CreateMollieRefund;
-use Laravel\Cashier\Order\OrderItemCollection;
-use Laravel\Cashier\Refunds\RefundBuilder;
-use Laravel\Cashier\Refunds\RefundItem;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Database\Factories\OrderItemFactory;
+use Laravel\Cashier\Mollie\Order\OrderItemCollection;
+use Laravel\Cashier\Mollie\Refunds\RefundBuilder;
+use Laravel\Cashier\Mollie\Refunds\RefundItem;
+use Laravel\Cashier\Mollie\Tests\BaseTestCase;
+use Laravel\Cashier\Mollie\Tests\Database\Factories\OrderItemFactory;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Refund as MollieRefund;
 use Mollie\Api\Types\RefundStatus as MollieRefundStatus;

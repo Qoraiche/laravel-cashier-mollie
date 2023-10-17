@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Traits;
+namespace Laravel\Cashier\Mollie\Traits;
 
 trait PopulatesMollieCustomerFields
 {

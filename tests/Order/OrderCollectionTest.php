@@ -1,11 +1,11 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Order;
+namespace Laravel\Cashier\Mollie\Tests\Order;
 
-use Laravel\Cashier\Order\Invoice;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Database\Factories\OrderFactory;
-use Laravel\Cashier\Tests\Fixtures\User;
+use Laravel\Cashier\Mollie\Order\Invoice;
+use Laravel\Cashier\Mollie\Tests\BaseTestCase;
+use Laravel\Cashier\Mollie\Tests\Database\Factories\OrderFactory;
+use Laravel\Cashier\Mollie\Tests\Fixtures\User;
 
 class OrderCollectionTest extends BaseTestCase
 {

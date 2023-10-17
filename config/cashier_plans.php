@@ -1,8 +1,8 @@
 <?php
 
-use Laravel\Cashier\Coupon\CouponOrderItemPreprocessor as ProcessCoupons;
-use Laravel\Cashier\Order\PersistOrderItemsPreprocessor as PersistOrderItems;
-use Laravel\Cashier\Plan\AdvancedIntervalGenerator;
+use Laravel\Cashier\Mollie\Coupon\CouponOrderItemPreprocessor as ProcessCoupons;
+use Laravel\Cashier\Mollie\Order\PersistOrderItemsPreprocessor as PersistOrderItems;
+use Laravel\Cashier\Mollie\Plan\AdvancedIntervalGenerator;
 
 return [
 

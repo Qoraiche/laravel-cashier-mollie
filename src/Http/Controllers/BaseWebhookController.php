@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Http\Controllers;
+namespace Laravel\Cashier\Mollie\Http\Controllers;
 
 use Laravel\Cashier\Mollie\Contracts\GetMolliePayment;
 use Mollie\Api\Exceptions\ApiException;

@@ -1,11 +1,11 @@
 <?php
 
-namespace Laravel\Cashier\Plan;
+namespace Laravel\Cashier\Mollie\Plan;
 
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
-use Laravel\Cashier\Plan\Contracts\IntervalGeneratorContract;
-use Laravel\Cashier\Subscription;
+use Laravel\Cashier\Mollie\Plan\Contracts\IntervalGeneratorContract;
+use Laravel\Cashier\Mollie\Subscription;
 
 class AdvancedIntervalGenerator extends BaseIntervalGenerator implements IntervalGeneratorContract
 {
@@ -23,7 +23,7 @@ class AdvancedIntervalGenerator extends BaseIntervalGenerator implements Interva
     }
 
     /**
-     * @param  \Laravel\Cashier\Subscription|null  $subscription
+     * @param  \Laravel\Cashier\Mollie\Subscription|null  $subscription
      * @return \Carbon\Carbon|\Carbon\Traits\Modifiers
      */
     public function getEndOfNextSubscriptionCycle(Subscription $subscription = null)

@@ -1,10 +1,10 @@
 <?php
 
-namespace Laravel\Cashier\Order;
+namespace Laravel\Cashier\Mollie\Order;
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Collection as BaseCollection;
-use Laravel\Cashier\Order\BaseOrderItemPreprocessor as Preprocessor;
+use Laravel\Cashier\Mollie\Order\BaseOrderItemPreprocessor as Preprocessor;
 
 /**
  * A collection of instantiable OrderItemPreprocessor class strings.
@@ -15,7 +15,7 @@ class OrderItemPreprocessorCollection extends Collection
      * Initialize the preprocessors from a string array.
      *
      * @param  string[]  $value
-     * @return \Laravel\Cashier\Order\OrderItemPreprocessorCollection
+     * @return \Laravel\Cashier\Mollie\Order\OrderItemPreprocessorCollection
      */
     public static function fromArray($value)
     {
@@ -27,8 +27,8 @@ class OrderItemPreprocessorCollection extends Collection
     }
 
     /**
-     * @param  \Laravel\Cashier\Order\OrderItem  $item
-     * @return \Laravel\Cashier\Order\OrderItemCollection
+     * @param  \Laravel\Cashier\Mollie\Order\OrderItem  $item
+     * @return \Laravel\Cashier\Mollie\Order\OrderItemCollection
      */
     public function handle(OrderItem $item)
     {
@@ -43,7 +43,7 @@ class OrderItemPreprocessorCollection extends Collection
      * Create an OrderItemCollection from a basic Collection.
      *
      * @param  \Illuminate\Support\Collection  $collection
-     * @return \Laravel\Cashier\Order\OrderItemPreprocessorCollection
+     * @return \Laravel\Cashier\Mollie\Order\OrderItemPreprocessorCollection
      */
     public static function fromBaseCollection(BaseCollection $collection)
     {

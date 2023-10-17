@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Database\Migrations;
+namespace Laravel\Cashier\Mollie\Tests\Database\Migrations;
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;

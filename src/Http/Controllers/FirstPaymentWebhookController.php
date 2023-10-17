@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Cashier\Http\Controllers;
+namespace Laravel\Cashier\Mollie\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Event;
-use Laravel\Cashier\Events\FirstPaymentFailed;
-use Laravel\Cashier\Events\FirstPaymentPaid;
-use Laravel\Cashier\FirstPayment\FirstPaymentHandler;
+use Laravel\Cashier\Mollie\Events\FirstPaymentFailed;
+use Laravel\Cashier\Mollie\Events\FirstPaymentPaid;
+use Laravel\Cashier\Mollie\FirstPayment\FirstPaymentHandler;
 use Laravel\Cashier\Mollie\Contracts\UpdateMolliePayment;
 use Symfony\Component\HttpFoundation\Response;
 

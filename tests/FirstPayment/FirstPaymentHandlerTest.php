@@ -1,14 +1,14 @@
 <?php
 
-namespace Laravel\Cashier\Tests\FirstPayment;
+namespace Laravel\Cashier\Mollie\Tests\FirstPayment;
 
 use Illuminate\Support\Facades\Event;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Events\MandateUpdated;
-use Laravel\Cashier\FirstPayment\Actions\AddBalance;
-use Laravel\Cashier\FirstPayment\FirstPaymentHandler;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Fixtures\User;
+use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Mollie\Events\MandateUpdated;
+use Laravel\Cashier\Mollie\FirstPayment\Actions\AddBalance;
+use Laravel\Cashier\Mollie\FirstPayment\FirstPaymentHandler;
+use Laravel\Cashier\Mollie\Tests\BaseTestCase;
+use Laravel\Cashier\Mollie\Tests\Fixtures\User;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Payment as MolliePayment;
 use Mollie\Api\Types\PaymentStatus;

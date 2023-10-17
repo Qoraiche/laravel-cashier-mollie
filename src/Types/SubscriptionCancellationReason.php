@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Types;
+namespace Laravel\Cashier\Mollie\Types;
 
 class SubscriptionCancellationReason
 {

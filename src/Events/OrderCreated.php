@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Cashier\Events;
+namespace Laravel\Cashier\Mollie\Events;
 
 use Illuminate\Queue\SerializesModels;
-use Laravel\Cashier\Order\Order;
+use Laravel\Cashier\Mollie\Order\Order;
 
 class OrderCreated
 {

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Plan\Contracts;
+namespace Laravel\Cashier\Mollie\Plan\Contracts;
 
-use Laravel\Cashier\Order\OrderItemPreprocessorCollection;
+use Laravel\Cashier\Mollie\Order\OrderItemPreprocessorCollection;
 use Money\Money;
 
 interface Plan
@@ -26,7 +26,7 @@ interface Plan
     public function description();
 
     /**
-     * @return \Laravel\Cashier\Plan\Contracts\IntervalGeneratorContract
+     * @return \Laravel\Cashier\Mollie\Plan\Contracts\IntervalGeneratorContract
      */
     public function interval();
 
@@ -95,13 +95,13 @@ interface Plan
     public function setFirstPaymentWebhookUrl(string $webhookUrl);
 
     /**
-     * @return \Laravel\Cashier\Order\OrderItemPreprocessorCollection
+     * @return \Laravel\Cashier\Mollie\Order\OrderItemPreprocessorCollection
      */
     public function orderItemPreprocessors();
 
     /**
-     * @param  \Laravel\Cashier\Order\OrderItemPreprocessorCollection  $preprocessors
-     * @return \Laravel\Cashier\Plan\Contracts\Plan
+     * @param  \Laravel\Cashier\Mollie\Order\OrderItemPreprocessorCollection  $preprocessors
+     * @return \Laravel\Cashier\Mollie\Plan\Contracts\Plan
      */
     public function setOrderItemPreprocessors(OrderItemPreprocessorCollection $preprocessors);
 }
