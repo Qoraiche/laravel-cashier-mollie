@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\SubscriptionBuilder;
+namespace Laravel\Cashier\SubscriptionBuilder;
 
 use Illuminate\Http\RedirectResponse;
 use Mollie\Api\Resources\Payment;
@@ -14,14 +14,14 @@ class RedirectToCheckoutResponse extends RedirectResponse
     protected $payment;
 
     /**
-     * @var \Laravel\Cashier\Mollie\SubscriptionBuilder\FirstPaymentSubscriptionBuilder
+     * @var \Laravel\Cashier\SubscriptionBuilder\FirstPaymentSubscriptionBuilder
      */
     protected $firstPaymentSubscriptionBuilder;
 
     /**
      * @param  \Mollie\Api\Resources\Payment  $payment
      * @param  array  $context
-     * @return \Laravel\Cashier\Mollie\SubscriptionBuilder\RedirectToCheckoutResponse
+     * @return \Laravel\Cashier\SubscriptionBuilder\RedirectToCheckoutResponse
      */
     public static function forPayment(Payment $payment, array $context = [])
     {
@@ -33,9 +33,9 @@ class RedirectToCheckoutResponse extends RedirectResponse
     }
 
     /**
-     * @param  \Laravel\Cashier\Mollie\SubscriptionBuilder\FirstPaymentSubscriptionBuilder  $builder
+     * @param  \Laravel\Cashier\SubscriptionBuilder\FirstPaymentSubscriptionBuilder  $builder
      * @param  array  $context
-     * @return \Laravel\Cashier\Mollie\SubscriptionBuilder\RedirectToCheckoutResponse
+     * @return \Laravel\Cashier\SubscriptionBuilder\RedirectToCheckoutResponse
      */
     public static function forFirstPaymentSubscriptionBuilder(FirstPaymentSubscriptionBuilder $builder, array $context = [])
     {
@@ -65,7 +65,7 @@ class RedirectToCheckoutResponse extends RedirectResponse
 
     /**
      * @param  \Mollie\Api\Resources\Payment  $payment
-     * @return \Laravel\Cashier\Mollie\SubscriptionBuilder\RedirectToCheckoutResponse
+     * @return \Laravel\Cashier\SubscriptionBuilder\RedirectToCheckoutResponse
      */
     protected function setPayment(Payment $payment)
     {
@@ -86,7 +86,7 @@ class RedirectToCheckoutResponse extends RedirectResponse
     }
 
     /**
-     * @param  \Laravel\Cashier\Mollie\SubscriptionBuilder\FirstPaymentSubscriptionBuilder  $builder
+     * @param  \Laravel\Cashier\SubscriptionBuilder\FirstPaymentSubscriptionBuilder  $builder
      * @return $this
      */
     protected function setBuilder(FirstPaymentSubscriptionBuilder $builder)

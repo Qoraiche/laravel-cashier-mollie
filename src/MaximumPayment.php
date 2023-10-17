@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Cashier\Mollie;
+namespace Laravel\Cashier;
 
 use Laravel\Cashier\Mollie\Contracts\GetMollieMethodMaximumAmount;
-use Laravel\Cashier\Mollie\Order\Contracts\MaximumPayment as MaximumPaymentContract;
+use Laravel\Cashier\Order\Contracts\MaximumPayment as MaximumPaymentContract;
 use Mollie\Api\Resources\Mandate;
 
 class MaximumPayment implements MaximumPaymentContract

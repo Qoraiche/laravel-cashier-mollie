@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Mollie\Refunds;
+namespace Laravel\Cashier\Refunds;
 
 use Illuminate\Support\Collection;
-use Laravel\Cashier\Mollie\Cashier;
-use Laravel\Cashier\Mollie\Order\OrderItem;
-use Laravel\Cashier\Mollie\Order\OrderItemCollection;
+use Laravel\Cashier\Cashier;
+use Laravel\Cashier\Order\OrderItem;
+use Laravel\Cashier\Order\OrderItemCollection;
 use Money\Currency;
 use Money\Money;
 

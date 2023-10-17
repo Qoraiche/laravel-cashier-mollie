@@ -1,18 +1,18 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\SubscriptionBuilder;
+namespace Laravel\Cashier\SubscriptionBuilder;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Cashier\Mollie\FirstPayment\Actions\ActionCollection;
-use Laravel\Cashier\Mollie\FirstPayment\Actions\AddGenericOrderItem;
-use Laravel\Cashier\Mollie\FirstPayment\Actions\ApplySubscriptionCouponToPayment;
-use Laravel\Cashier\Mollie\FirstPayment\Actions\StartSubscription;
-use Laravel\Cashier\Mollie\FirstPayment\FirstPaymentBuilder;
-use Laravel\Cashier\Mollie\Plan\Contracts\PlanRepository;
-use Laravel\Cashier\Mollie\Plan\Plan;
-use Laravel\Cashier\Mollie\SubscriptionBuilder\Contracts\SubscriptionBuilder as Contract;
-use Laravel\Cashier\Mollie\Traits\HandlesMoneyRounding;
+use Laravel\Cashier\FirstPayment\Actions\ActionCollection;
+use Laravel\Cashier\FirstPayment\Actions\AddGenericOrderItem;
+use Laravel\Cashier\FirstPayment\Actions\ApplySubscriptionCouponToPayment;
+use Laravel\Cashier\FirstPayment\Actions\StartSubscription;
+use Laravel\Cashier\FirstPayment\FirstPaymentBuilder;
+use Laravel\Cashier\Plan\Contracts\PlanRepository;
+use Laravel\Cashier\Plan\Plan;
+use Laravel\Cashier\SubscriptionBuilder\Contracts\SubscriptionBuilder as Contract;
+use Laravel\Cashier\Traits\HandlesMoneyRounding;
 
 /**
  * Creates and configures a Mollie first payment to create a new mandate via Mollie's checkout
@@ -24,12 +24,12 @@ class FirstPaymentSubscriptionBuilder implements Contract
     use HandlesMoneyRounding;
 
     /**
-     * @var \Laravel\Cashier\Mollie\FirstPayment\FirstPaymentBuilder
+     * @var \Laravel\Cashier\FirstPayment\FirstPaymentBuilder
      */
     protected $firstPaymentBuilder;
 
     /**
-     * @var \Laravel\Cashier\Mollie\FirstPayment\Actions\StartSubscription
+     * @var \Laravel\Cashier\FirstPayment\Actions\StartSubscription
      */
     protected $startSubscription;
 
@@ -63,7 +63,7 @@ class FirstPaymentSubscriptionBuilder implements Contract
      * @param  string  $plan
      * @param  array  $paymentOptions
      *
-     * @throws \Laravel\Cashier\Mollie\Exceptions\PlanNotFoundException
+     * @throws \Laravel\Cashier\Exceptions\PlanNotFoundException
      */
     public function __construct(Model $owner, string $name, string $plan, $paymentOptions = [])
     {
@@ -80,9 +80,9 @@ class FirstPaymentSubscriptionBuilder implements Contract
     /**
      * Create a new subscription. Returns a redirect to Mollie's checkout screen.
      *
-     * @return \Laravel\Cashier\Mollie\SubscriptionBuilder\RedirectToCheckoutResponse
+     * @return \Laravel\Cashier\SubscriptionBuilder\RedirectToCheckoutResponse
      *
-     * @throws \Laravel\Cashier\Mollie\Exceptions\CouponException|\Throwable
+     * @throws \Laravel\Cashier\Exceptions\CouponException|\Throwable
      */
     public function create()
     {
@@ -128,7 +128,7 @@ class FirstPaymentSubscriptionBuilder implements Contract
      * @param  int  $trialDays
      * @return $this
      *
-     * @throws \Laravel\Cashier\Mollie\Exceptions\PlanNotFoundException
+     * @throws \Laravel\Cashier\Exceptions\PlanNotFoundException
      * @throws \Throwable
      */
     public function trialDays(int $trialDays)
@@ -142,7 +142,7 @@ class FirstPaymentSubscriptionBuilder implements Contract
      * @param  Carbon  $trialUntil
      * @return $this
      *
-     * @throws \Laravel\Cashier\Mollie\Exceptions\PlanNotFoundException
+     * @throws \Laravel\Cashier\Exceptions\PlanNotFoundException
      * @throws \Throwable
      */
     public function trialUntil(Carbon $trialUntil)
@@ -156,7 +156,7 @@ class FirstPaymentSubscriptionBuilder implements Contract
     /**
      * Force the trial to end immediately.
      *
-     * @return \Laravel\Cashier\Mollie\SubscriptionBuilder\Contracts\SubscriptionBuilder|void
+     * @return \Laravel\Cashier\SubscriptionBuilder\Contracts\SubscriptionBuilder|void
      */
     public function skipTrial()
     {
@@ -188,7 +188,7 @@ class FirstPaymentSubscriptionBuilder implements Contract
      * @param  string  $coupon
      * @return $this
      *
-     * @throws \Laravel\Cashier\Mollie\Exceptions\CouponNotFoundException
+     * @throws \Laravel\Cashier\Exceptions\CouponNotFoundException
      */
     public function withCoupon(string $coupon)
     {
@@ -211,7 +211,7 @@ class FirstPaymentSubscriptionBuilder implements Contract
     }
 
     /**
-     * @return \Laravel\Cashier\Mollie\FirstPayment\FirstPaymentBuilder
+     * @return \Laravel\Cashier\FirstPayment\FirstPaymentBuilder
      */
     public function getMandatePaymentBuilder()
     {
@@ -219,7 +219,7 @@ class FirstPaymentSubscriptionBuilder implements Contract
     }
 
     /**
-     * @return \Laravel\Cashier\Mollie\SubscriptionBuilder\RedirectToCheckoutResponse
+     * @return \Laravel\Cashier\SubscriptionBuilder\RedirectToCheckoutResponse
      */
     protected function redirectToCheckout()
     {
@@ -227,7 +227,7 @@ class FirstPaymentSubscriptionBuilder implements Contract
     }
 
     /**
-     * @throws \Laravel\Cashier\Mollie\Exceptions\CouponException|\Throwable
+     * @throws \Laravel\Cashier\Exceptions\CouponException|\Throwable
      */
     protected function validateCoupon()
     {
@@ -243,7 +243,7 @@ class FirstPaymentSubscriptionBuilder implements Contract
     /**
      * @param  \Illuminate\Database\Eloquent\Model  $owner
      * @param  array  $paymentOptions
-     * @return \Laravel\Cashier\Mollie\FirstPayment\FirstPaymentBuilder
+     * @return \Laravel\Cashier\FirstPayment\FirstPaymentBuilder
      */
     protected function initializeFirstPaymentBuilder(Model $owner, $paymentOptions = [])
     {

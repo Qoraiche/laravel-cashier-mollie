@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Tests\Database\Factories;
+namespace Laravel\Cashier\Tests\Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Laravel\Cashier\Mollie\Tests\Fixtures\User;
+use Laravel\Cashier\Tests\Fixtures\User;
 
 class UserFactory extends Factory
 {

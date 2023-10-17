@@ -1,23 +1,23 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Coupon\Contracts;
+namespace Laravel\Cashier\Coupon\Contracts;
 
-use Laravel\Cashier\Mollie\Coupon\Coupon;
-use Laravel\Cashier\Mollie\Coupon\RedeemedCoupon;
-use Laravel\Cashier\Mollie\Exceptions\CouponException;
-use Laravel\Cashier\Mollie\Order\OrderItemCollection;
+use Laravel\Cashier\Coupon\Coupon;
+use Laravel\Cashier\Coupon\RedeemedCoupon;
+use Laravel\Cashier\Exceptions\CouponException;
+use Laravel\Cashier\Order\OrderItemCollection;
 
 interface CouponHandler
 {
     /**
      * @param  array  $context
-     * @return \Laravel\Cashier\Mollie\Coupon\Contracts\CouponHandler
+     * @return \Laravel\Cashier\Coupon\Contracts\CouponHandler
      */
     public function withContext(array $context);
 
     /**
-     * @param  \Laravel\Cashier\Mollie\Coupon\Coupon  $coupon
-     * @param  \Laravel\Cashier\Mollie\Coupon\Contracts\AcceptsCoupons  $model
+     * @param  \Laravel\Cashier\Coupon\Coupon  $coupon
+     * @param  \Laravel\Cashier\Coupon\Contracts\AcceptsCoupons  $model
      * @return bool
      *
      * @throws \Throwable|CouponException
@@ -27,15 +27,15 @@ interface CouponHandler
     /**
      * Apply the coupon to the OrderItemCollection
      *
-     * @param  \Laravel\Cashier\Mollie\Coupon\RedeemedCoupon  $redeemedCoupon
-     * @param  \Laravel\Cashier\Mollie\Order\OrderItemCollection  $items
-     * @return \Laravel\Cashier\Mollie\Order\OrderItemCollection
+     * @param  \Laravel\Cashier\Coupon\RedeemedCoupon  $redeemedCoupon
+     * @param  \Laravel\Cashier\Order\OrderItemCollection  $items
+     * @return \Laravel\Cashier\Order\OrderItemCollection
      */
     public function handle(RedeemedCoupon $redeemedCoupon, OrderItemCollection $items);
 
     /**
-     * @param  \Laravel\Cashier\Mollie\Order\OrderItemCollection  $items
-     * @return \Laravel\Cashier\Mollie\Order\OrderItemCollection
+     * @param  \Laravel\Cashier\Order\OrderItemCollection  $items
+     * @return \Laravel\Cashier\Order\OrderItemCollection
      */
     public function getDiscountOrderItems(OrderItemCollection $items);
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Tests\Fixtures;
+namespace Laravel\Cashier\Tests\Fixtures;
 
-use Laravel\Cashier\Mollie\Order\OrderItem as CashierOrderItem;
+use Laravel\Cashier\Order\OrderItem as CashierOrderItem;
 
 class OrderItem extends CashierOrderItem
 {

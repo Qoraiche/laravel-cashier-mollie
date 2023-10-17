@@ -1,13 +1,13 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Tests\Charge;
+namespace Laravel\Cashier\Tests\Charge;
 
-use Laravel\Cashier\Mollie\Charge\FirstPaymentChargeBuilder;
-use Laravel\Cashier\Mollie\Charge\MandatedChargeBuilder;
+use Laravel\Cashier\Charge\FirstPaymentChargeBuilder;
+use Laravel\Cashier\Charge\MandatedChargeBuilder;
 use Laravel\Cashier\Mollie\Contracts\GetMollieCustomer;
 use Laravel\Cashier\Mollie\Contracts\GetMollieMandate;
-use Laravel\Cashier\Mollie\Tests\BaseTestCase;
-use Laravel\Cashier\Mollie\Tests\Fixtures\User;
+use Laravel\Cashier\Tests\BaseTestCase;
+use Laravel\Cashier\Tests\Fixtures\User;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Customer;
 use Mollie\Api\Resources\Mandate;

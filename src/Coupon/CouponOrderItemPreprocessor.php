@@ -1,17 +1,17 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Coupon;
+namespace Laravel\Cashier\Coupon;
 
-use Laravel\Cashier\Mollie\Cashier;
-use Laravel\Cashier\Mollie\Order\BaseOrderItemPreprocessor;
-use Laravel\Cashier\Mollie\Order\OrderItem;
-use Laravel\Cashier\Mollie\Order\OrderItemCollection;
+use Laravel\Cashier\Cashier;
+use Laravel\Cashier\Order\BaseOrderItemPreprocessor;
+use Laravel\Cashier\Order\OrderItem;
+use Laravel\Cashier\Order\OrderItemCollection;
 
 class CouponOrderItemPreprocessor extends BaseOrderItemPreprocessor
 {
     /**
-     * @param  \Laravel\Cashier\Mollie\Order\OrderItemCollection  $items
-     * @return \Laravel\Cashier\Mollie\Order\OrderItemCollection
+     * @param  \Laravel\Cashier\Order\OrderItemCollection  $items
+     * @return \Laravel\Cashier\Order\OrderItemCollection
      */
     public function handle(OrderItemCollection $items)
     {

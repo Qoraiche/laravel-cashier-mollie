@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Tests\Helpers;
+namespace Laravel\Cashier\Tests\Helpers;
 
 use Money\Currency;
 use Money\Money;

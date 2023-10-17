@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Coupon\Contracts;
+namespace Laravel\Cashier\Coupon\Contracts;
 
 interface AcceptsCoupons
 {

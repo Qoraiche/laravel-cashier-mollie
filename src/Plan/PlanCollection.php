@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Mollie\Plan;
+namespace Laravel\Cashier\Plan;
 
 use Illuminate\Support\Collection;
 

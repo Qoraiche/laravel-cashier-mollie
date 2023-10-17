@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Console\Commands;
+namespace Laravel\Cashier\Console\Commands;
 
 use Illuminate\Console\Command;
-use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Cashier;
 
 class CashierRun extends Command
 {

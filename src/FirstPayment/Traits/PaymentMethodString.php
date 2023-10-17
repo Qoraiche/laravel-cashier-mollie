@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\FirstPayment\Traits;
+namespace Laravel\Cashier\FirstPayment\Traits;
 
 trait PaymentMethodString
 {

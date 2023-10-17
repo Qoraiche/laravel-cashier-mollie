@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Events;
+namespace Laravel\Cashier\Events;
 
 use Illuminate\Queue\SerializesModels;
-use Laravel\Cashier\Mollie\Subscription;
+use Laravel\Cashier\Subscription;
 
 class SubscriptionCancelled
 {

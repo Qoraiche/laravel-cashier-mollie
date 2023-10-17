@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Charge;
+namespace Laravel\Cashier\Charge;
 
 use Illuminate\Database\Eloquent\Model;
 use Money\Money;

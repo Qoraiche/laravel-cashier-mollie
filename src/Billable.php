@@ -1,25 +1,25 @@
 <?php
 
-namespace Laravel\Cashier\Mollie;
+namespace Laravel\Cashier;
 
 use Dompdf\Options;
 use Illuminate\Support\Facades\DB;
 use InvalidArgumentException;
-use Laravel\Cashier\Mollie\Charge\ManagesCharges;
-use Laravel\Cashier\Mollie\Coupon\Contracts\CouponRepository;
-use Laravel\Cashier\Mollie\Events\MandateClearedFromBillable;
-use Laravel\Cashier\Mollie\Exceptions\InvalidMandateException;
-use Laravel\Cashier\Mollie\Exceptions\MandateIsNotYetFinalizedException;
+use Laravel\Cashier\Charge\ManagesCharges;
+use Laravel\Cashier\Coupon\Contracts\CouponRepository;
+use Laravel\Cashier\Events\MandateClearedFromBillable;
+use Laravel\Cashier\Exceptions\InvalidMandateException;
+use Laravel\Cashier\Exceptions\MandateIsNotYetFinalizedException;
 use Laravel\Cashier\Mollie\Contracts\CreateMollieCustomer;
 use Laravel\Cashier\Mollie\Contracts\GetMollieCustomer;
 use Laravel\Cashier\Mollie\Contracts\GetMollieMandate;
-use Laravel\Cashier\Mollie\Order\Invoice;
-use Laravel\Cashier\Mollie\Order\Order;
-use Laravel\Cashier\Mollie\Plan\Contracts\PlanRepository;
-use Laravel\Cashier\Mollie\SubscriptionBuilder\FirstPaymentSubscriptionBuilder;
-use Laravel\Cashier\Mollie\SubscriptionBuilder\MandatedSubscriptionBuilder;
-use Laravel\Cashier\Mollie\Traits\PopulatesMollieCustomerFields;
-use Laravel\Cashier\Mollie\UpdatePaymentMethod\UpdatePaymentMethodBuilder;
+use Laravel\Cashier\Order\Invoice;
+use Laravel\Cashier\Order\Order;
+use Laravel\Cashier\Plan\Contracts\PlanRepository;
+use Laravel\Cashier\SubscriptionBuilder\FirstPaymentSubscriptionBuilder;
+use Laravel\Cashier\SubscriptionBuilder\MandatedSubscriptionBuilder;
+use Laravel\Cashier\Traits\PopulatesMollieCustomerFields;
+use Laravel\Cashier\UpdatePaymentMethod\UpdatePaymentMethodBuilder;
 use Mollie\Api\Exceptions\ApiException;
 use Mollie\Api\Resources\Customer;
 use Mollie\Api\Types\MandateMethod;
@@ -46,7 +46,7 @@ trait Billable
      * Get a subscription instance by name for the billable model.
      *
      * @param  string  $subscription
-     * @return \Laravel\Cashier\Mollie\Subscription|null
+     * @return \Laravel\Cashier\Subscription|null
      */
     public function subscription($subscription = 'default')
     {
@@ -65,10 +65,10 @@ trait Billable
      * @param  string  $subscription
      * @param  string  $plan
      * @param  array  $firstPaymentOptions
-     * @return \Laravel\Cashier\Mollie\SubscriptionBuilder\Contracts\SubscriptionBuilder
+     * @return \Laravel\Cashier\SubscriptionBuilder\Contracts\SubscriptionBuilder
      *
-     * @throws \Laravel\Cashier\Mollie\Exceptions\InvalidMandateException
-     * @throws \Laravel\Cashier\Mollie\Exceptions\PlanNotFoundException
+     * @throws \Laravel\Cashier\Exceptions\InvalidMandateException
+     * @throws \Laravel\Cashier\Exceptions\PlanNotFoundException
      * @throws \Throwable
      */
     public function newSubscription($subscription, $plan, $firstPaymentOptions = [])
@@ -98,9 +98,9 @@ trait Billable
      * @param $subscription
      * @param $plan
      * @param  array  $firstPaymentOptions
-     * @return \Laravel\Cashier\Mollie\SubscriptionBuilder\FirstPaymentSubscriptionBuilder
+     * @return \Laravel\Cashier\SubscriptionBuilder\FirstPaymentSubscriptionBuilder
      *
-     * @throws \Laravel\Cashier\Mollie\Exceptions\PlanNotFoundException
+     * @throws \Laravel\Cashier\Exceptions\PlanNotFoundException
      */
     public function newSubscriptionViaMollieCheckout($subscription, $plan, $firstPaymentOptions = [])
     {
@@ -113,10 +113,10 @@ trait Billable
      * @param  string  $mandateId
      * @param  string  $subscription
      * @param  string  $plan
-     * @return \Laravel\Cashier\Mollie\SubscriptionBuilder\MandatedSubscriptionBuilder
+     * @return \Laravel\Cashier\SubscriptionBuilder\MandatedSubscriptionBuilder
      *
-     * @throws \Laravel\Cashier\Mollie\Exceptions\PlanNotFoundException
-     * @throws \Throwable|\Laravel\Cashier\Mollie\Exceptions\InvalidMandateException
+     * @throws \Laravel\Cashier\Exceptions\PlanNotFoundException
+     * @throws \Throwable|\Laravel\Cashier\Exceptions\InvalidMandateException
      */
     public function newSubscriptionForMandateId($mandateId, $subscription, $plan)
     {
@@ -510,7 +510,7 @@ trait Billable
     /**
      * @return bool
      *
-     * @throws \Laravel\Cashier\Mollie\Exceptions\InvalidMandateException
+     * @throws \Laravel\Cashier\Exceptions\InvalidMandateException
      */
     public function guardMollieMandate()
     {
@@ -520,7 +520,7 @@ trait Billable
     }
 
     /**
-     * @return \Laravel\Cashier\Mollie\Billable
+     * @return \Laravel\Cashier\Billable
      */
     public function clearMollieMandate()
     {
@@ -547,8 +547,8 @@ trait Billable
      * @return $this
      *
      * @throws \Illuminate\Contracts\Container\BindingResolutionException
-     * @throws \Laravel\Cashier\Mollie\Exceptions\CouponNotFoundException
-     * @throws \Throwable|\Laravel\Cashier\Mollie\Exceptions\CouponException
+     * @throws \Laravel\Cashier\Exceptions\CouponNotFoundException
+     * @throws \Throwable|\Laravel\Cashier\Exceptions\CouponException
      */
     public function redeemCoupon($coupon, $subscription = 'default', $revokeOtherCoupons = true)
     {
@@ -558,7 +558,7 @@ trait Billable
             throw new InvalidArgumentException('Unable to apply coupon. Subscription does not exist.');
         }
 
-        /** @var \Laravel\Cashier\Mollie\Coupon\Coupon $coupon */
+        /** @var \Laravel\Cashier\Coupon\Coupon $coupon */
         $coupon = app()->make(CouponRepository::class)->findOrFail($coupon);
         $coupon->validateFor($subscription);
 
@@ -585,7 +585,7 @@ trait Billable
     }
 
     /**
-     * @return \Laravel\Cashier\Mollie\UpdatePaymentMethod\UpdatePaymentMethodBuilder
+     * @return \Laravel\Cashier\UpdatePaymentMethod\UpdatePaymentMethodBuilder
      */
     public function updatePaymentMethod()
     {
@@ -596,7 +596,7 @@ trait Billable
      * Find an invoice using an order number.
      *
      * @param $orderNumber
-     * @return \Laravel\Cashier\Mollie\Order\Invoice|null
+     * @return \Laravel\Cashier\Order\Invoice|null
      *
      * @throws \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException
      */
@@ -620,7 +620,7 @@ trait Billable
      * Find an invoice using an order number or throw a NotFoundHttpException.
      *
      * @param $orderNumber
-     * @return \Laravel\Cashier\Mollie\Order\Invoice
+     * @return \Laravel\Cashier\Order\Invoice
      *
      * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
      * @throws \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException
@@ -640,7 +640,7 @@ trait Billable
      * Find an invoice by order id.
      *
      * @param $orderId
-     * @return \Laravel\Cashier\Mollie\Order\Invoice|null
+     * @return \Laravel\Cashier\Order\Invoice|null
      *
      * @throws \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException
      */
@@ -662,7 +662,7 @@ trait Billable
 
     /**
      * @param $orderId
-     * @return \Laravel\Cashier\Mollie\Order\Invoice
+     * @return \Laravel\Cashier\Order\Invoice
      *
      * @throws \Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException
      * @throws \Symfony\Component\HttpKernel\Exception\NotFoundHttpException

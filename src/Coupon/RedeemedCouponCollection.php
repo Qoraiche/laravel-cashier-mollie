@@ -1,10 +1,10 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Coupon;
+namespace Laravel\Cashier\Coupon;
 
 use Illuminate\Database\Eloquent\Collection;
-use Laravel\Cashier\Mollie\Order\OrderItem;
-use Laravel\Cashier\Mollie\Order\OrderItemCollection;
+use Laravel\Cashier\Order\OrderItem;
+use Laravel\Cashier\Order\OrderItemCollection;
 
 class RedeemedCouponCollection extends Collection
 {

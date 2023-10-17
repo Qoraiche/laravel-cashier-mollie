@@ -1,10 +1,10 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Order;
+namespace Laravel\Cashier\Order;
 
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Collection as BaseCollection;
-use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Cashier;
 use LogicException;
 use Money\Currency;
 use Money\Money;
@@ -39,7 +39,7 @@ class OrderItemCollection extends Collection
      * Filter this collection by owner.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $owner
-     * @return \Laravel\Cashier\Mollie\Order\OrderItemCollection
+     * @return \Laravel\Cashier\Order\OrderItemCollection
      */
     public function whereOwner($owner)
     {
@@ -69,7 +69,7 @@ class OrderItemCollection extends Collection
      * Filter this collection by currency symbol.
      *
      * @param $currency
-     * @return \Laravel\Cashier\Mollie\Order\OrderItemCollection
+     * @return \Laravel\Cashier\Order\OrderItemCollection
      */
     public function whereCurrency($currency)
     {
@@ -112,7 +112,7 @@ class OrderItemCollection extends Collection
     /**
      * Preprocesses the OrderItems.
      *
-     * @return \Laravel\Cashier\Mollie\Order\OrderItemCollection
+     * @return \Laravel\Cashier\Order\OrderItemCollection
      */
     public function preprocess()
     {
@@ -128,7 +128,7 @@ class OrderItemCollection extends Collection
      * Create an OrderItemCollection from a basic Collection.
      *
      * @param  \Illuminate\Support\Collection  $collection
-     * @return \Laravel\Cashier\Mollie\Order\OrderItemCollection
+     * @return \Laravel\Cashier\Order\OrderItemCollection
      */
     public static function fromBaseCollection(BaseCollection $collection)
     {
@@ -138,7 +138,7 @@ class OrderItemCollection extends Collection
     /**
      * Persist all items in the collection.
      *
-     * @return \Illuminate\Support\Collection|\Laravel\Cashier\Mollie\Order\OrderItemCollection
+     * @return \Illuminate\Support\Collection|\Laravel\Cashier\Order\OrderItemCollection
      */
     public function save()
     {

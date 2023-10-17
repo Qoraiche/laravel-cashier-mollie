@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Coupon;
+namespace Laravel\Cashier\Coupon;
 
-use Laravel\Cashier\Mollie\Coupon\Contracts\CouponRepository;
-use Laravel\Cashier\Mollie\Exceptions\CouponNotFoundException;
+use Laravel\Cashier\Coupon\Contracts\CouponRepository;
+use Laravel\Cashier\Exceptions\CouponNotFoundException;
 
 class ConfigCouponRepository implements CouponRepository
 {
@@ -55,7 +55,7 @@ class ConfigCouponRepository implements CouponRepository
 
     /**
      * @param  string  $name
-     * @return \Laravel\Cashier\Mollie\Coupon\Coupon
+     * @return \Laravel\Cashier\Coupon\Coupon
      */
     protected function buildCoupon(string $name)
     {

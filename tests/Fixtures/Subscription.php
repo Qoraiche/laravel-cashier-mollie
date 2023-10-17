@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Tests\Fixtures;
+namespace Laravel\Cashier\Tests\Fixtures;
 
-use Laravel\Cashier\Mollie\Subscription as CashierSubscription;
+use Laravel\Cashier\Subscription as CashierSubscription;
 
 class Subscription extends CashierSubscription
 {

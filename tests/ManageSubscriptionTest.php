@@ -1,19 +1,19 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Tests;
+namespace Laravel\Cashier\Tests;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Event;
-use Laravel\Cashier\Mollie\Cashier;
-use Laravel\Cashier\Mollie\Events\SubscriptionQuantityUpdated;
-use Laravel\Cashier\Mollie\Events\SubscriptionResumed;
-use Laravel\Cashier\Mollie\Events\SubscriptionStarted;
+use Laravel\Cashier\Cashier;
+use Laravel\Cashier\Events\SubscriptionQuantityUpdated;
+use Laravel\Cashier\Events\SubscriptionResumed;
+use Laravel\Cashier\Events\SubscriptionStarted;
 use Laravel\Cashier\Mollie\Contracts\CreateMolliePayment;
 use Laravel\Cashier\Mollie\Contracts\GetMollieMandate;
 use Laravel\Cashier\Mollie\Contracts\GetMollieMethodMinimumAmount;
 use Laravel\Cashier\Mollie\GetMollieCustomer;
 use Laravel\Cashier\Mollie\GetMollieMethodMaximumAmount;
-use Laravel\Cashier\Mollie\Tests\Fixtures\User;
+use Laravel\Cashier\Tests\Fixtures\User;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Customer;
 use Mollie\Api\Resources\Mandate;

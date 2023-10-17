@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\SubscriptionBuilder\Contracts;
+namespace Laravel\Cashier\SubscriptionBuilder\Contracts;
 
 interface SubscriptionBuilder extends SubscriptionConfigurator
 {

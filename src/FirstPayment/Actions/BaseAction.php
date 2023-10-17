@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\FirstPayment\Actions;
+namespace Laravel\Cashier\FirstPayment\Actions;
 
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Cashier\Mollie\Cashier;
+use Laravel\Cashier\Cashier;
 use Money\Money;
 
 abstract class BaseAction
@@ -46,14 +46,14 @@ abstract class BaseAction
     /**
      * Prepare a stub of OrderItems processed with the payment.
      *
-     * @return \Laravel\Cashier\Mollie\Order\OrderItemCollection
+     * @return \Laravel\Cashier\Order\OrderItemCollection
      */
     abstract public function makeProcessedOrderItems();
 
     /**
      * Execute this action and return the created OrderItemCollection.
      *
-     * @return \Laravel\Cashier\Mollie\Order\OrderItemCollection
+     * @return \Laravel\Cashier\Order\OrderItemCollection
      */
     abstract public function execute();
 

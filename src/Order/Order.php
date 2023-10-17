@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Order;
+namespace Laravel\Cashier\Order;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
@@ -8,21 +8,21 @@ use Illuminate\Database\Query\Builder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Str;
-use Laravel\Cashier\Mollie\Cashier;
-use Laravel\Cashier\Mollie\Events\BalanceTurnedStale;
-use Laravel\Cashier\Mollie\Events\OrderCreated;
-use Laravel\Cashier\Mollie\Events\OrderPaymentFailed;
-use Laravel\Cashier\Mollie\Events\OrderPaymentFailedDueToInvalidMandate;
-use Laravel\Cashier\Mollie\Events\OrderPaymentPaid;
-use Laravel\Cashier\Mollie\Events\OrderProcessed;
-use Laravel\Cashier\Mollie\Exceptions\AmountExceedsMolliePaymentMethodLimit;
-use Laravel\Cashier\Mollie\Exceptions\InvalidMandateException;
-use Laravel\Cashier\Mollie\Exceptions\OrderRetryRequiresStatusFailedException;
-use Laravel\Cashier\Mollie\MandatedPayment\MandatedPaymentBuilder;
-use Laravel\Cashier\Mollie\Order\Contracts\MaximumPayment;
-use Laravel\Cashier\Mollie\Order\Contracts\MinimumPayment;
-use Laravel\Cashier\Mollie\Refunds\RefundBuilder;
-use Laravel\Cashier\Mollie\Traits\HasOwner;
+use Laravel\Cashier\Cashier;
+use Laravel\Cashier\Events\BalanceTurnedStale;
+use Laravel\Cashier\Events\OrderCreated;
+use Laravel\Cashier\Events\OrderPaymentFailed;
+use Laravel\Cashier\Events\OrderPaymentFailedDueToInvalidMandate;
+use Laravel\Cashier\Events\OrderPaymentPaid;
+use Laravel\Cashier\Events\OrderProcessed;
+use Laravel\Cashier\Exceptions\AmountExceedsMolliePaymentMethodLimit;
+use Laravel\Cashier\Exceptions\InvalidMandateException;
+use Laravel\Cashier\Exceptions\OrderRetryRequiresStatusFailedException;
+use Laravel\Cashier\MandatedPayment\MandatedPaymentBuilder;
+use Laravel\Cashier\Order\Contracts\MaximumPayment;
+use Laravel\Cashier\Order\Contracts\MinimumPayment;
+use Laravel\Cashier\Refunds\RefundBuilder;
+use Laravel\Cashier\Traits\HasOwner;
 use LogicException;
 use Mollie\Api\Resources\Mandate;
 use Mollie\Api\Resources\Payment as MolliePayment;
@@ -47,8 +47,8 @@ use Money\Money;
  * @property \Carbon\Carbon|null processed_at
  * @property int amount_refunded
  * @property int amount_charged_back
- * @property \Laravel\Cashier\Mollie\Order\OrderItemCollection items
- * @property \Laravel\Cashier\Mollie\Refunds\RefundCollection refunds
+ * @property \Laravel\Cashier\Order\OrderItemCollection items
+ * @property \Laravel\Cashier\Refunds\RefundCollection refunds
  *
  * @method static create(array $data)
  */
@@ -89,7 +89,7 @@ class Order extends Model
     /**
      * Creates an order from a collection of OrderItems
      *
-     * @param  \Laravel\Cashier\Mollie\Order\OrderItemCollection  $items
+     * @param  \Laravel\Cashier\Order\OrderItemCollection  $items
      * @param  array  $overrides
      * @param  bool  $process_items
      * @return Order
@@ -144,7 +144,7 @@ class Order extends Model
     /**
      * Creates a processed order from a collection of OrderItems
      *
-     * @param  \Laravel\Cashier\Mollie\Order\OrderItemCollection  $items
+     * @param  \Laravel\Cashier\Order\OrderItemCollection  $items
      * @param  array  $overrides
      * @return Order
      */
@@ -166,7 +166,7 @@ class Order extends Model
     /**
      * @param $item
      * @param  array  $overrides
-     * @return \Laravel\Cashier\Mollie\Order\Order
+     * @return \Laravel\Cashier\Order\Order
      */
     public static function createProcessedFromItem($item, $overrides = [])
     {
@@ -178,7 +178,7 @@ class Order extends Model
      *
      * @return $this
      *
-     * @throws \Laravel\Cashier\Mollie\Exceptions\InvalidMandateException
+     * @throws \Laravel\Cashier\Exceptions\InvalidMandateException
      */
     public function processPayment()
     {
@@ -303,7 +303,7 @@ class Order extends Model
      *
      * @param  null  $id
      * @param  null  $date
-     * @return \Laravel\Cashier\Mollie\Order\Invoice
+     * @return \Laravel\Cashier\Order\Invoice
      */
     public function invoice($id = null, $date = null)
     {
@@ -626,7 +626,7 @@ class Order extends Model
 
     /**
      * Get the description used when creating a mollie order.
-     *
+     * 
      * @return string
      */
     public function getDescription()
@@ -637,7 +637,7 @@ class Order extends Model
     /**
      * Get an empty refund builder for this order.
      *
-     * @return \Laravel\Cashier\Mollie\Refunds\RefundBuilder
+     * @return \Laravel\Cashier\Refunds\RefundBuilder
      */
     public function refundBuilder()
     {
@@ -647,7 +647,7 @@ class Order extends Model
     /**
      * Initiate a new refund for this order.
      *
-     * @return \Laravel\Cashier\Mollie\Refunds\RefundBuilder
+     * @return \Laravel\Cashier\Refunds\RefundBuilder
      */
     public function newRefund()
     {
@@ -657,7 +657,7 @@ class Order extends Model
     /**
      * Get a refund builder prepared to completely refund this order.
      *
-     * @return \Laravel\Cashier\Mollie\Refunds\RefundBuilder
+     * @return \Laravel\Cashier\Refunds\RefundBuilder
      */
     public function completeRefundBuilder()
     {
@@ -667,7 +667,7 @@ class Order extends Model
     /**
      * Initiate a complete refund for this order.
      *
-     * @return \Laravel\Cashier\Mollie\Refunds\Refund
+     * @return \Laravel\Cashier\Refunds\Refund
      */
     public function refundCompletely()
     {
@@ -677,7 +677,7 @@ class Order extends Model
     /**
      * @param  \Mollie\Api\Resources\Mandate  $mandate
      *
-     * @throws \Laravel\Cashier\Mollie\Exceptions\InvalidMandateException
+     * @throws \Laravel\Cashier\Exceptions\InvalidMandateException
      */
     protected function guardMandate(?Mandate $mandate)
     {
@@ -687,7 +687,7 @@ class Order extends Model
     }
 
     /**
-     * @return \Laravel\Cashier\Mollie\Order\OrderNumberGenerator
+     * @return \Laravel\Cashier\Order\OrderNumberGenerator
      */
     protected static function numberGenerator()
     {
@@ -743,8 +743,8 @@ class Order extends Model
     }
 
     /**
-     * @throws \Laravel\Cashier\Mollie\Exceptions\InvalidMandateException
-     * @throws \Laravel\Cashier\Mollie\Exceptions\OrderRetryRequiresStatusFailedException
+     * @throws \Laravel\Cashier\Exceptions\InvalidMandateException
+     * @throws \Laravel\Cashier\Exceptions\OrderRetryRequiresStatusFailedException
      */
     public function retryNow()
     {

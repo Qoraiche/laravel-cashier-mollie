@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Console\Commands;
+namespace Laravel\Cashier\Console\Commands;
 
 use Illuminate\Console\Command;
 

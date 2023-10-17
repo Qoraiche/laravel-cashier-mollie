@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Coupon\Contracts;
+namespace Laravel\Cashier\Coupon\Contracts;
 
-use Laravel\Cashier\Mollie\Coupon\Coupon;
-use Laravel\Cashier\Mollie\Exceptions\CouponNotFoundException;
+use Laravel\Cashier\Coupon\Coupon;
+use Laravel\Cashier\Exceptions\CouponNotFoundException;
 
 interface CouponRepository
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Events;
+namespace Laravel\Cashier\Events;
 
 use Illuminate\Queue\SerializesModels;
 
@@ -11,7 +11,7 @@ class OrderInvoiceAvailable
     /**
      * The created order.
      *
-     * @var \Laravel\Cashier\Mollie\Order\Order
+     * @var \Laravel\Cashier\Order\Order
      */
     public $order;
 

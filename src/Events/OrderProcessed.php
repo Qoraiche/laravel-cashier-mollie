@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Events;
+namespace Laravel\Cashier\Events;
 
 use Illuminate\Queue\SerializesModels;
-use Laravel\Cashier\Mollie\Order\Order;
+use Laravel\Cashier\Order\Order;
 
 class OrderProcessed
 {
@@ -19,7 +19,7 @@ class OrderProcessed
     /**
      * OrderProcessed constructor.
      *
-     * @param  \Laravel\Cashier\Mollie\Order\Order  $order
+     * @param  \Laravel\Cashier\Order\Order  $order
      */
     public function __construct(Order $order)
     {

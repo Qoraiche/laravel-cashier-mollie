@@ -1,14 +1,14 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Plan;
+namespace Laravel\Cashier\Plan;
 
 use Carbon\Carbon;
-use Laravel\Cashier\Mollie\Subscription;
+use Laravel\Cashier\Subscription;
 
 class BaseIntervalGenerator
 {
     /**
-     * @param  \Laravel\Cashier\Mollie\Subscription|null  $subscription
+     * @param  \Laravel\Cashier\Subscription|null  $subscription
      * @return \Carbon\Carbon
      */
     protected function startOfTheSubscription(Subscription $subscription = null)

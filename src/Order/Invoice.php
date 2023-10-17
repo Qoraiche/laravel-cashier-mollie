@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Order;
+namespace Laravel\Cashier\Order;
 
 use Carbon\Carbon;
 use Dompdf\Dompdf;
@@ -8,8 +8,8 @@ use Dompdf\Options;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
-use Laravel\Cashier\Mollie\Order\Contracts\InvoicableItem;
-use Laravel\Cashier\Mollie\Traits\FormatsAmount;
+use Laravel\Cashier\Order\Contracts\InvoicableItem;
+use Laravel\Cashier\Traits\FormatsAmount;
 use Money\Currency;
 use Money\Money;
 use Symfony\Component\HttpFoundation\Response;
@@ -148,7 +148,7 @@ class Invoice
     }
 
     /**
-     * @param  \Laravel\Cashier\Mollie\Order\Contracts\InvoicableItem  $item
+     * @param  \Laravel\Cashier\Order\Contracts\InvoicableItem  $item
      * @return $this
      */
     public function addItem(InvoicableItem $item)

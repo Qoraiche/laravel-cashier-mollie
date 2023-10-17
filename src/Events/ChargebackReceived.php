@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Mollie\Events;
+namespace Laravel\Cashier\Events;
 
 use Illuminate\Queue\SerializesModels;
-use Laravel\Cashier\Mollie\Payment;
+use Laravel\Cashier\Payment;
 use Money\Money;
 
 class ChargebackReceived
@@ -13,7 +13,7 @@ class ChargebackReceived
     use SerializesModels;
 
     /**
-     * @var \Laravel\Cashier\Mollie\Payment
+     * @var \Laravel\Cashier\Payment
      */
     public Payment $payment;
 

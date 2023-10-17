@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Tests\FirstPayment\Actions;
+namespace Laravel\Cashier\Tests\FirstPayment\Actions;
 
 use Carbon\Carbon;
-use Laravel\Cashier\Mollie\FirstPayment\Actions\StartSubscription;
+use Laravel\Cashier\FirstPayment\Actions\StartSubscription;
 use Laravel\Cashier\Mollie\Contracts\GetMollieMandate;
 use Laravel\Cashier\Mollie\GetMollieCustomer;
-use Laravel\Cashier\Mollie\Tests\BaseTestCase;
+use Laravel\Cashier\Tests\BaseTestCase;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Customer;
 use Mollie\Api\Resources\Mandate;

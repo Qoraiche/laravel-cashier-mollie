@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Tests\Fixtures;
+namespace Laravel\Cashier\Tests\Fixtures;
 
-use Laravel\Cashier\Mollie\Payment as CashierPayment;
+use Laravel\Cashier\Payment as CashierPayment;
 
 class Payment extends CashierPayment
 {

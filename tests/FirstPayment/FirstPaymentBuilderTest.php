@@ -1,16 +1,16 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Tests\FirstPayment;
+namespace Laravel\Cashier\Tests\FirstPayment;
 
-use Laravel\Cashier\Mollie\Cashier;
-use Laravel\Cashier\Mollie\FirstPayment\Actions\AddBalance;
-use Laravel\Cashier\Mollie\FirstPayment\Actions\AddGenericOrderItem;
-use Laravel\Cashier\Mollie\FirstPayment\FirstPaymentBuilder;
+use Laravel\Cashier\Cashier;
+use Laravel\Cashier\FirstPayment\Actions\AddBalance;
+use Laravel\Cashier\FirstPayment\Actions\AddGenericOrderItem;
+use Laravel\Cashier\FirstPayment\FirstPaymentBuilder;
 use Laravel\Cashier\Mollie\Contracts\CreateMollieCustomer;
 use Laravel\Cashier\Mollie\Contracts\CreateMolliePayment;
 use Laravel\Cashier\Mollie\Contracts\UpdateMolliePayment;
-use Laravel\Cashier\Mollie\Tests\BaseTestCase;
-use Laravel\Cashier\Mollie\Tests\Fixtures\User;
+use Laravel\Cashier\Tests\BaseTestCase;
+use Laravel\Cashier\Tests\Fixtures\User;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Customer;
 use Mollie\Api\Resources\Payment as MolliePayment;

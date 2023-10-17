@@ -1,10 +1,10 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Charge;
+namespace Laravel\Cashier\Charge;
 
 use Illuminate\Support\Collection;
-use Laravel\Cashier\Mollie\FirstPayment\Actions\ActionCollection as FirstPaymentActionCollection;
-use Laravel\Cashier\Mollie\Order\OrderItemCollection;
+use Laravel\Cashier\FirstPayment\Actions\ActionCollection as FirstPaymentActionCollection;
+use Laravel\Cashier\Order\OrderItemCollection;
 
 class ChargeItemCollection extends Collection
 {

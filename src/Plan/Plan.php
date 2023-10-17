@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Mollie\Plan;
+namespace Laravel\Cashier\Plan;
 
-use Laravel\Cashier\Mollie\FirstPayment\Traits\PaymentMethodString;
-use Laravel\Cashier\Mollie\Order\OrderItemPreprocessorCollection;
-use Laravel\Cashier\Mollie\Plan\Contracts\Plan as PlanContract;
+use Laravel\Cashier\FirstPayment\Traits\PaymentMethodString;
+use Laravel\Cashier\Order\OrderItemPreprocessorCollection;
+use Laravel\Cashier\Plan\Contracts\Plan as PlanContract;
 use Money\Money;
 
 class Plan implements PlanContract
@@ -30,7 +30,7 @@ class Plan implements PlanContract
     /**
      * The billing interval generator
      *
-     * @var \Laravel\Cashier\Mollie\Plan\Contracts\IntervalGeneratorContract
+     * @var \Laravel\Cashier\Plan\Contracts\IntervalGeneratorContract
      */
     protected $interval;
 
@@ -80,7 +80,7 @@ class Plan implements PlanContract
      */
     protected $firstPaymentWebhookUrl;
 
-    /** @var \Laravel\Cashier\Mollie\Order\OrderItemPreprocessorCollection */
+    /** @var \Laravel\Cashier\Order\OrderItemPreprocessorCollection */
     protected $orderItemPreprocessors;
 
     /**
@@ -213,7 +213,7 @@ class Plan implements PlanContract
     }
 
     /**
-     * @return \Laravel\Cashier\Mollie\Plan\Contracts\IntervalGeneratorContract
+     * @return \Laravel\Cashier\Plan\Contracts\IntervalGeneratorContract
      */
     public function interval()
     {
@@ -270,7 +270,7 @@ class Plan implements PlanContract
     }
 
     /**
-     * @return \Laravel\Cashier\Mollie\Order\OrderItemPreprocessorCollection
+     * @return \Laravel\Cashier\Order\OrderItemPreprocessorCollection
      */
     public function orderItemPreprocessors()
     {
@@ -278,8 +278,8 @@ class Plan implements PlanContract
     }
 
     /**
-     * @param  \Laravel\Cashier\Mollie\Order\OrderItemPreprocessorCollection  $preprocessors
-     * @return \Laravel\Cashier\Mollie\Plan\Contracts\Plan
+     * @param  \Laravel\Cashier\Order\OrderItemPreprocessorCollection  $preprocessors
+     * @return \Laravel\Cashier\Plan\Contracts\Plan
      */
     public function setOrderItemPreprocessors(OrderItemPreprocessorCollection $preprocessors)
     {

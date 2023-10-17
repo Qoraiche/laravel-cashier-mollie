@@ -1,15 +1,15 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\UpdatePaymentMethod;
+namespace Laravel\Cashier\UpdatePaymentMethod;
 
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Cashier\Mollie\FirstPayment\Actions\AddBalance;
-use Laravel\Cashier\Mollie\FirstPayment\Actions\AddGenericOrderItem;
-use Laravel\Cashier\Mollie\FirstPayment\FirstPaymentBuilder;
-use Laravel\Cashier\Mollie\Http\RedirectToCheckoutResponse;
-use Laravel\Cashier\Mollie\Plan\Contracts\PlanRepository;
-use Laravel\Cashier\Mollie\Traits\HandlesMoneyRounding;
-use Laravel\Cashier\Mollie\UpdatePaymentMethod\Contracts\UpdatePaymentMethodBuilder as Contract;
+use Laravel\Cashier\FirstPayment\Actions\AddBalance;
+use Laravel\Cashier\FirstPayment\Actions\AddGenericOrderItem;
+use Laravel\Cashier\FirstPayment\FirstPaymentBuilder;
+use Laravel\Cashier\Http\RedirectToCheckoutResponse;
+use Laravel\Cashier\Plan\Contracts\PlanRepository;
+use Laravel\Cashier\Traits\HandlesMoneyRounding;
+use Laravel\Cashier\UpdatePaymentMethod\Contracts\UpdatePaymentMethodBuilder as Contract;
 use Money\Money;
 
 class UpdatePaymentMethodBuilder implements Contract
@@ -82,7 +82,7 @@ class UpdatePaymentMethodBuilder implements Contract
     }
 
     /**
-     * @return \Laravel\Cashier\Mollie\FirstPayment\Actions\AddBalance[]|\Laravel\Cashier\Mollie\FirstPayment\Actions\AddGenericOrderItem[]
+     * @return \Laravel\Cashier\FirstPayment\Actions\AddBalance[]|\Laravel\Cashier\FirstPayment\Actions\AddGenericOrderItem[]
      */
     protected function getPaymentActions()
     {
@@ -94,7 +94,7 @@ class UpdatePaymentMethodBuilder implements Contract
     }
 
     /**
-     * @return \Laravel\Cashier\Mollie\FirstPayment\Actions\AddBalance
+     * @return \Laravel\Cashier\FirstPayment\Actions\AddBalance
      */
     protected function addToBalanceAction()
     {
@@ -108,7 +108,7 @@ class UpdatePaymentMethodBuilder implements Contract
     }
 
     /**
-     * @return \Laravel\Cashier\Mollie\FirstPayment\Actions\AddGenericOrderItem
+     * @return \Laravel\Cashier\FirstPayment\Actions\AddGenericOrderItem
      */
     protected function addGenericItemAction()
     {

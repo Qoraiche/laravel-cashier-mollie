@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Mollie\Events;
+namespace Laravel\Cashier\Events;
 
 use Illuminate\Queue\SerializesModels;
-use Laravel\Cashier\Mollie\Refunds\Refund;
+use Laravel\Cashier\Refunds\Refund;
 
 class RefundInitiated
 {
     use SerializesModels;
 
     /**
-     * @var \Laravel\Cashier\Mollie\Refunds\Refund
+     * @var \Laravel\Cashier\Refunds\Refund
      */
     public Refund $refund;
 

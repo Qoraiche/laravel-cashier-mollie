@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Mollie\Refunds;
+namespace Laravel\Cashier\Refunds;
 
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Cashier\Mollie\Cashier;
-use Laravel\Cashier\Mollie\Order\ConvertsToMoney;
-use Laravel\Cashier\Mollie\Order\OrderItem;
-use Laravel\Cashier\Mollie\Traits\HasOwner;
+use Laravel\Cashier\Cashier;
+use Laravel\Cashier\Order\ConvertsToMoney;
+use Laravel\Cashier\Order\OrderItem;
+use Laravel\Cashier\Traits\HasOwner;
 use Money\Money;
 
 /**
@@ -55,7 +55,7 @@ class RefundItem extends Model
     protected $guarded = [];
 
     /**
-     * @param  \Laravel\Cashier\Mollie\Order\OrderItem  $orderItem
+     * @param  \Laravel\Cashier\Order\OrderItem  $orderItem
      * @param  array  $overrides
      * @return static
      */
@@ -82,7 +82,7 @@ class RefundItem extends Model
      * Create a new RefundItemCollection instance.
      *
      * @param  array  $models
-     * @return \Laravel\Cashier\Mollie\Refunds\RefundItemCollection
+     * @return \Laravel\Cashier\Refunds\RefundItemCollection
      */
     public function newCollection(array $models = []): RefundItemCollection
     {

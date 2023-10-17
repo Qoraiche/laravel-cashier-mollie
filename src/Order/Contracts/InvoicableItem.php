@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Mollie\Order\Contracts;
+namespace Laravel\Cashier\Order\Contracts;
 
 interface InvoicableItem
 {

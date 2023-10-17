@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Mollie\Tests\Mollie;
+namespace Laravel\Cashier\Tests\Mollie;
 
 use Laravel\Cashier\Mollie\Contracts\GetMolliePayment;
 use Mollie\Api\Resources\Payment;

@@ -1,16 +1,16 @@
 <?php
 
-namespace Laravel\Cashier\Mollie;
+namespace Laravel\Cashier;
 
 use Exception;
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Cashier\Mollie\Coupon\AppliedCoupon;
-use Laravel\Cashier\Mollie\Coupon\RedeemedCoupon;
-use Laravel\Cashier\Mollie\Credit\Credit;
-use Laravel\Cashier\Mollie\Order\Order;
-use Laravel\Cashier\Mollie\Order\OrderItem;
-use Laravel\Cashier\Mollie\Refunds\Refund;
-use Laravel\Cashier\Mollie\Refunds\RefundItem;
+use Laravel\Cashier\Coupon\AppliedCoupon;
+use Laravel\Cashier\Coupon\RedeemedCoupon;
+use Laravel\Cashier\Credit\Credit;
+use Laravel\Cashier\Order\Order;
+use Laravel\Cashier\Order\OrderItem;
+use Laravel\Cashier\Refunds\Refund;
+use Laravel\Cashier\Refunds\RefundItem;
 use Money\Currencies\ISOCurrencies;
 use Money\Formatter\IntlMoneyFormatter;
 use Money\Money;
