@@ -44,9 +44,9 @@ class UpdatePaymentMethodBuilder implements Contract
     public function create()
     {
         $payment = (new FirstPaymentBuilder($this->owner))
-            ->setRedirectUrl(config('cashier.update_payment_method.redirect_url'))
+            ->setRedirectUrl(config('cashier_mollie.update_payment_method.redirect_url'))
             ->setFirstPaymentMethod($this->allowedPaymentMethods())
-            ->setDescription(config('cashier.update_payment_method.description'))
+            ->setDescription(config('cashier_mollie.update_payment_method.description'))
             ->inOrderTo($this->getPaymentActions())
             ->create();
 
@@ -101,9 +101,9 @@ class UpdatePaymentMethodBuilder implements Contract
         return
             new AddBalance(
                 $this->owner,
-                mollie_array_to_money(config('cashier.update_payment_method.amount')),
+                mollie_array_to_money(config('cashier_mollie.update_payment_method.amount')),
                 1,
-                config('cashier.update_payment_method.description')
+                config('cashier_mollie.update_payment_method.description')
             );
     }
 
@@ -112,12 +112,12 @@ class UpdatePaymentMethodBuilder implements Contract
      */
     protected function addGenericItemAction()
     {
-        $total = mollie_array_to_money(config('cashier.update_payment_method.amount'));
+        $total = mollie_array_to_money(config('cashier_mollie.update_payment_method.amount'));
         $taxPercentage = $this->owner->taxPercentage() * 0.01;
 
         $subtotal = $this->subtotalForTotalIncludingTax($total, $taxPercentage);
 
-        return new AddGenericOrderItem($this->owner, $subtotal, 1, config('cashier.update_payment_method.description'));
+        return new AddGenericOrderItem($this->owner, $subtotal, 1, config('cashier_mollie.update_payment_method.description'));
     }
 
     /**

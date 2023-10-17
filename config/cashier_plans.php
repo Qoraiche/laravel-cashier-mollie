@@ -17,7 +17,7 @@ return [
          *
          * @link https://docs.mollie.com/payments/recurring#payments-recurring-first-payment
          */
-        'first_payment' => config('cashier.first_payment'),
+        'first_payment' => config('cashier_mollie.first_payment'),
 
         /**
          * The default chain of subscription OrderItem preprocessors. These are called right before the Subscription's

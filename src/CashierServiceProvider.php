@@ -77,7 +77,7 @@ class CashierServiceProvider extends ServiceProvider
 
     protected function mergeConfig()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/cashier.php', 'cashier');
+        $this->mergeConfigFrom(__DIR__.'/../config/cashier_mollie.php', 'cashier_mollie');
         $this->mergeConfigFrom(__DIR__.'/../config/cashier_coupons.php', 'cashier_coupons');
         $this->mergeConfigFrom(__DIR__.'/../config/cashier_plans.php', 'cashier_plans');
     }
@@ -93,7 +93,7 @@ class CashierServiceProvider extends ServiceProvider
                 __DIR__.'/../database/migrations/create_credits_table.php.stub' => database_path($prefix.'_create_credits_table.php'),
                 __DIR__.'/../database/migrations/create_orders_table.php.stub' => database_path($prefix.'_create_orders_table.php'),
                 __DIR__.'/../database/migrations/create_order_items_table.php.stub' => database_path($prefix.'_create_order_items_table.php'),
-                __DIR__.'/../database/migrations/create_subscriptions_table.php.stub' => database_path($prefix.'_create_subscriptions_table.php'),
+//                __DIR__.'/../database/migrations/create_subscriptions_table.php.stub' => database_path($prefix.'_create_subscriptions_table.php'),
                 __DIR__.'/../database/migrations/create_payments_table.php.stub' => database_path($prefix.'_create_payments_table.php'),
                 __DIR__.'/../database/migrations/create_refund_items_table.php.stub' => database_path($prefix.'_create_refund_items_table.php'),
                 __DIR__.'/../database/migrations/create_refunds_table.php.stub' => database_path($prefix.'_create_refunds_table.php'),
@@ -115,7 +115,7 @@ class CashierServiceProvider extends ServiceProvider
     protected function publishConfig(string $tag)
     {
         $this->publishes([
-            __DIR__.'/../config/cashier.php' => config_path('cashier.php'),
+            __DIR__.'/../config/cashier_mollie.php' => config_path('cashier_mollie.php'),
             __DIR__.'/../config/cashier_coupons.php' => config_path('cashier_coupons.php'),
             __DIR__.'/../config/cashier_plans.php' => config_path('cashier_plans.php'),
         ], $tag);
@@ -137,7 +137,7 @@ class CashierServiceProvider extends ServiceProvider
 
     protected function configureCurrency()
     {
-        $currency = config('cashier.currency', false);
+        $currency = config('cashier_mollie.currency', false);
         if ($currency) {
             Cashier::useCurrency($currency);
         }
@@ -145,7 +145,7 @@ class CashierServiceProvider extends ServiceProvider
 
     protected function configureCurrencyLocale()
     {
-        $locale = config('cashier.currency_locale', false);
+        $locale = config('cashier_mollie.currency_locale', false);
         if ($locale) {
             Cashier::useCurrencyLocale($locale);
         }

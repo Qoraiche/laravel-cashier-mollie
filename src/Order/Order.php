@@ -241,7 +241,7 @@ class Order extends Model
                         $owner,
                         $this->getDescription(),
                         $totalDue,
-                        url(config('cashier.webhook_url')),
+                        url(config('cashier_mollie.webhook_url')),
                         [
                             'metadata' => [
                                 'temporary_mollie_payment_id' => $this->mollie_payment_id,
@@ -691,7 +691,7 @@ class Order extends Model
      */
     protected static function numberGenerator()
     {
-        return app()->make(config('cashier.order_number_generator.model'));
+        return app()->make(config('cashier_mollie.order_number_generator.model'));
     }
 
     /**

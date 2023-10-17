@@ -10,7 +10,7 @@ class CashierServiceProviderTest extends BaseTestCase
     /** @test */
     public function canOptionallySetCurrencyInConfig()
     {
-        $this->assertEquals('INEXISTENT', config('cashier.currency', 'INEXISTENT'));
+        $this->assertEquals('INEXISTENT', config('cashier_mollie.currency', 'INEXISTENT'));
 
         $this->assertEquals('€', Cashier::usesCurrencySymbol());
         $this->assertEquals('eur', Cashier::usesCurrency());
@@ -25,7 +25,7 @@ class CashierServiceProviderTest extends BaseTestCase
     /** @test */
     public function canOptionallySetCurrencyLocaleInConfig()
     {
-        $this->assertEquals('INEXISTENT', config('cashier.currency_locale', 'INEXISTENT'));
+        $this->assertEquals('INEXISTENT', config('cashier_mollie.currency_locale', 'INEXISTENT'));
         $this->assertEquals('de_DE', Cashier::usesCurrencyLocale());
 
         config(['cashier.currency_locale' => 'nl_NL']);

@@ -77,8 +77,8 @@ class FirstPaymentBuilder
         $this->actions = new ActionCollection;
         $this->options = $options;
         $this->description = config('app.name', 'First payment');
-        $this->redirectUrl = url(config('cashier.first_payment.redirect_url', config('cashier.redirect_url')));
-        $this->webhookUrl = url(config('cashier.first_payment.webhook_url'));
+        $this->redirectUrl = url(config('cashier_mollie.first_payment.redirect_url', config('cashier_mollie.redirect_url')));
+        $this->webhookUrl = url(config('cashier_mollie.first_payment.webhook_url'));
     }
 
     /**

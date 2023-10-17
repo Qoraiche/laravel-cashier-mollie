@@ -20,7 +20,7 @@ class FirstPaymentChargeBuilder implements Contract
     public function __construct(Model $owner)
     {
         $this->owner = $owner;
-        $this->redirectUrl = url(config('cashier.first_payment.redirect_url', config('cashier.redirect_url')));
+        $this->redirectUrl = url(config('cashier_mollie.first_payment.redirect_url', config('cashier_mollie.redirect_url')));
         $this->items = new ChargeItemCollection;
     }
 

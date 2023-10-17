@@ -372,7 +372,7 @@ class Cashier
             }
         }
 
-        return config('cashier.locale');
+        return config('cashier_mollie.locale');
     }
 
     /**
@@ -382,7 +382,7 @@ class Cashier
      */
     public static function webhookUrl()
     {
-        return self::pathFromUrl(config('cashier.webhook_url'));
+        return self::pathFromUrl(config('cashier_mollie.webhook_url'));
     }
 
     /**
@@ -392,7 +392,7 @@ class Cashier
      */
     public static function firstPaymentWebhookUrl()
     {
-        return self::pathFromUrl(config('cashier.first_payment.webhook_url'));
+        return self::pathFromUrl(config('cashier_mollie.first_payment.webhook_url'));
     }
 
     /**
@@ -402,7 +402,7 @@ class Cashier
      */
     public static function aftercareWebhookUrl()
     {
-        return self::pathFromUrl(config('cashier.aftercare_webhook_url'));
+        return self::pathFromUrl(config('cashier_mollie.aftercare_webhook_url'));
     }
 
     /**

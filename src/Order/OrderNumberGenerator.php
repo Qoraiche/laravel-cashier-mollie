@@ -13,7 +13,7 @@ class OrderNumberGenerator
      */
     public function __construct()
     {
-        $this->offset = config('cashier.order_number_generator.offset');
+        $this->offset = config('cashier_mollie.order_number_generator.offset');
     }
 
     /**
