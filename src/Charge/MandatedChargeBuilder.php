@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Cashier\Charge;
+namespace Cashier\Mollie\Charge;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Charge\Contracts\ChargeBuilder as Contract;
-use Laravel\Cashier\Order\Order;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\Charge\Contracts\ChargeBuilder as Contract;
+use Cashier\Mollie\Order\Order;
 
 class MandatedChargeBuilder implements Contract
 {
@@ -66,7 +66,7 @@ class MandatedChargeBuilder implements Contract
     /**
      * @return ?Order
      *
-     * @throws \Laravel\Cashier\Exceptions\InvalidMandateException
+     * @throws \Cashier\Mollie\Exceptions\InvalidMandateException
      */
     public function create(): ?Order
     {

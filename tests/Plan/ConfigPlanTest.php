@@ -1,11 +1,11 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Plan;
+namespace Cashier\Mollie\Tests\Plan;
 
-use Laravel\Cashier\Plan\ConfigPlanRepository;
-use Laravel\Cashier\Plan\Plan;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Order\FakeOrderItemPreprocessor;
+use Cashier\Mollie\Plan\ConfigPlanRepository;
+use Cashier\Mollie\Plan\Plan;
+use Cashier\Mollie\Tests\BaseTestCase;
+use Cashier\Mollie\Tests\Order\FakeOrderItemPreprocessor;
 
 class ConfigPlanTest extends BaseTestCase
 {

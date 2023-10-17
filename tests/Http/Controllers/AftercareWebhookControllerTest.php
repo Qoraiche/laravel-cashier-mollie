@@ -2,20 +2,20 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Tests\Http\Controllers;
+namespace Cashier\Mollie\Tests\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Event;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Events\ChargebackReceived;
-use Laravel\Cashier\Events\RefundProcessed;
-use Laravel\Cashier\Http\Controllers\AftercareWebhookController;
-use Laravel\Cashier\Mollie\Contracts\GetMolliePayment;
-use Laravel\Cashier\Order\OrderItemCollection;
-use Laravel\Cashier\Refunds\RefundItemCollection;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Database\Factories\SubscriptionFactory;
-use Laravel\Cashier\Tests\Fixtures\User;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\Events\ChargebackReceived;
+use Cashier\Mollie\Events\RefundProcessed;
+use Cashier\Mollie\Http\Controllers\AftercareWebhookController;
+use Cashier\Mollie\Mollie\Contracts\GetMolliePayment;
+use Cashier\Mollie\Order\OrderItemCollection;
+use Cashier\Mollie\Refunds\RefundItemCollection;
+use Cashier\Mollie\Tests\BaseTestCase;
+use Cashier\Mollie\Tests\Database\Factories\SubscriptionFactory;
+use Cashier\Mollie\Tests\Fixtures\User;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Payment as MolliePayment;
 use Mollie\Api\Resources\Refund as MollieRefund;
@@ -92,13 +92,13 @@ class AftercareWebhookControllerTest extends BaseTestCase
             $subscription->scheduleNewOrderItemAt(now()),
         ]);
 
-        /** @var \Laravel\Cashier\Order\Order */
+        /** @var \Cashier\Mollie\Order\Order */
         $originalOrder = Cashier::$orderModel::createFromItems($orderItems, [
             'mollie_payment_id' => $molliePaymentId,
             'mollie_payment_status' => 'paid',
         ]);
 
-        /** @var \Laravel\Cashier\Refunds\Refund */
+        /** @var \Cashier\Mollie\Refunds\Refund */
         $localRefund = $originalOrder->refunds()->create([
             'owner_id' => $user->id,
             'owner_type' => get_class($user),

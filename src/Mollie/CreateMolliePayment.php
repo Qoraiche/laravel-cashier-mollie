@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Mollie;
+namespace Cashier\Mollie\Mollie;
 
-use Laravel\Cashier\Mollie\Contracts\CreateMolliePayment as Contract;
+use Cashier\Mollie\Mollie\Contracts\CreateMolliePayment as Contract;
 use Mollie\Api\Resources\Payment;
 
 class CreateMolliePayment extends BaseMollieInteraction implements Contract

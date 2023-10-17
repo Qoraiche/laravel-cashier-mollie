@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Exceptions;
+namespace Cashier\Mollie\Exceptions;
 
 use Throwable;
 

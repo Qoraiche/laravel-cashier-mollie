@@ -1,14 +1,14 @@
 <?php
 
-namespace Laravel\Cashier\FirstPayment;
+namespace Cashier\Mollie\FirstPayment;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\FirstPayment\Actions\ActionCollection;
-use Laravel\Cashier\FirstPayment\Traits\PaymentMethodString;
-use Laravel\Cashier\Mollie\Contracts\CreateMolliePayment;
-use Laravel\Cashier\Mollie\Contracts\UpdateMolliePayment;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\FirstPayment\Actions\ActionCollection;
+use Cashier\Mollie\FirstPayment\Traits\PaymentMethodString;
+use Cashier\Mollie\Mollie\Contracts\CreateMolliePayment;
+use Cashier\Mollie\Mollie\Contracts\UpdateMolliePayment;
 use Mollie\Api\Types\SequenceType;
 
 class FirstPaymentBuilder

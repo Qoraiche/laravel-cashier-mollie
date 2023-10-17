@@ -1,16 +1,16 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Plan;
+namespace Cashier\Mollie\Tests\Plan;
 
 use Illuminate\Support\Facades\Config;
-use Laravel\Cashier\Coupon\CouponOrderItemPreprocessor;
-use Laravel\Cashier\Exceptions\PlanNotFoundException;
-use Laravel\Cashier\Order\OrderItemPreprocessorCollection;
-use Laravel\Cashier\Order\PersistOrderItemsPreprocessor;
-use Laravel\Cashier\Plan\ConfigPlanRepository;
-use Laravel\Cashier\Plan\Contracts\IntervalGeneratorContract;
-use Laravel\Cashier\Plan\Contracts\Plan;
-use Laravel\Cashier\Tests\BaseTestCase;
+use Cashier\Mollie\Coupon\CouponOrderItemPreprocessor;
+use Cashier\Mollie\Exceptions\PlanNotFoundException;
+use Cashier\Mollie\Order\OrderItemPreprocessorCollection;
+use Cashier\Mollie\Order\PersistOrderItemsPreprocessor;
+use Cashier\Mollie\Plan\ConfigPlanRepository;
+use Cashier\Mollie\Plan\Contracts\IntervalGeneratorContract;
+use Cashier\Mollie\Plan\Contracts\Plan;
+use Cashier\Mollie\Tests\BaseTestCase;
 
 class ConfigPlanRepositoryTest extends BaseTestCase
 {
@@ -55,7 +55,7 @@ class ConfigPlanRepositoryTest extends BaseTestCase
     }
 
     /** @test
-     * @throws \Laravel\Cashier\Exceptions\PlanNotFoundException
+     * @throws \Cashier\Mollie\Exceptions\PlanNotFoundException
      */
     public function findOrFailCorrect()
     {

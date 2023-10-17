@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Cashier\Tests\FirstPayment\Actions;
+namespace Cashier\Mollie\Tests\FirstPayment\Actions;
 
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\FirstPayment\Actions\AddBalance;
-use Laravel\Cashier\Order\OrderItemCollection;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Fixtures\User;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\FirstPayment\Actions\AddBalance;
+use Cashier\Mollie\Order\OrderItemCollection;
+use Cashier\Mollie\Tests\BaseTestCase;
+use Cashier\Mollie\Tests\Fixtures\User;
 use Money\Currency;
 use Money\Money;
 

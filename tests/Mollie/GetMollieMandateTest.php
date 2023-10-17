@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Tests\Mollie;
+namespace Cashier\Mollie\Tests\Mollie;
 
-use Laravel\Cashier\Mollie\Contracts\GetMollieMandate;
+use Cashier\Mollie\Mollie\Contracts\GetMollieMandate;
 use Mollie\Api\Resources\Mandate;
 
 class GetMollieMandateTest extends BaseMollieInteractionTest
@@ -15,7 +15,7 @@ class GetMollieMandateTest extends BaseMollieInteractionTest
      */
     public function testExecute()
     {
-        /** @var \Laravel\Cashier\Mollie\GetMollieMandate $action */
+        /** @var \Cashier\Mollie\Mollie\GetMollieMandate $action */
         $action = $this->app->make(GetMollieMandate::class);
         $customerId = $this->getMandatedCustomerId();
         $mandateId = $this->getMandateId();

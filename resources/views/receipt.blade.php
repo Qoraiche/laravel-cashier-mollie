@@ -59,13 +59,13 @@
                                                                             style="display:block;padding-top:12px;padding-left:14px;color:#718096">
                                                                             @if ($item->quantity > 1)
                                                                                 {{ $item->quantity }} x
-                                                                                {{ Laravel\Cashier\Cashier::formatAmount($item->getUnitPrice()) }}
+                                                                                {{ Cashier\Mollie\Cashier::formatAmount($item->getUnitPrice()) }}
                                                                             @endif
                                                                         </span>
                                                                     </td>
                                                                     <td style="padding-bottom:16px;padding-left:20px;text-align:right;vertical-align:top;white-space:nowrap"
                                                                         align="right" valign="top">
-                                                                        {{ Laravel\Cashier\Cashier::formatAmount($item->getSubtotal()) }}
+                                                                        {{ Cashier\Mollie\Cashier::formatAmount($item->getSubtotal()) }}
                                                                     </td>
                                                                     <td style="padding-bottom:16px;padding-left:16px;padding-right:16px;text-align:right;color:#a0aec0;vertical-align:top;white-space:nowrap"
                                                                         align="right" valign="top">

@@ -2,17 +2,17 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Tests\Refunds;
+namespace Cashier\Mollie\Tests\Refunds;
 
 use Illuminate\Support\Facades\Event;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Events\RefundFailed;
-use Laravel\Cashier\Events\RefundProcessed;
-use Laravel\Cashier\Refunds\Refund;
-use Laravel\Cashier\Refunds\RefundItemCollection;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Database\Factories\OrderItemFactory;
-use Laravel\Cashier\Tests\Database\Factories\RefundFactory;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\Events\RefundFailed;
+use Cashier\Mollie\Events\RefundProcessed;
+use Cashier\Mollie\Refunds\Refund;
+use Cashier\Mollie\Refunds\RefundItemCollection;
+use Cashier\Mollie\Tests\BaseTestCase;
+use Cashier\Mollie\Tests\Database\Factories\OrderItemFactory;
+use Cashier\Mollie\Tests\Database\Factories\RefundFactory;
 use Mollie\Api\Types\RefundStatus as MollieRefundStatus;
 
 class RefundTest extends BaseTestCase

@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Mollie;
+namespace Cashier\Mollie\Mollie;
 
-use Laravel\Cashier\Mollie\Contracts\GetMolliePayment;
-use Laravel\Cashier\Mollie\Contracts\GetMollieRefund as Contract;
+use Cashier\Mollie\Mollie\Contracts\GetMolliePayment;
+use Cashier\Mollie\Mollie\Contracts\GetMollieRefund as Contract;
 use Mollie\Api\Resources\Refund;
 use Mollie\Laravel\Wrappers\MollieApiWrapper as Mollie;
 
@@ -17,7 +17,7 @@ class GetMollieRefund implements Contract
     protected Mollie $mollie;
 
     /**
-     * @var \Laravel\Cashier\Mollie\Contracts\GetMolliePayment
+     * @var \Cashier\Mollie\Mollie\Contracts\GetMolliePayment
      */
     protected GetMolliePayment $getMolliePayment;
 

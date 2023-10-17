@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Cashier;
+namespace Cashier\Mollie;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use Laravel\Cashier\Order\OrderInvoiceSubscriber;
+use Cashier\Mollie\Order\OrderInvoiceSubscriber;
 
 class EventServiceProvider extends ServiceProvider
 {

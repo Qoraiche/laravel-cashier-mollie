@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Cashier\Order;
+namespace Cashier\Mollie\Order;
 
-use Laravel\Cashier\Cashier;
+use Cashier\Mollie\Cashier;
 
 class OrderNumberGenerator
 {

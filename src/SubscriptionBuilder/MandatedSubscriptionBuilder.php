@@ -1,14 +1,14 @@
 <?php
 
-namespace Laravel\Cashier\SubscriptionBuilder;
+namespace Cashier\Mollie\SubscriptionBuilder;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use Laravel\Cashier\Coupon\Contracts\CouponRepository;
-use Laravel\Cashier\Plan\Contracts\PlanRepository;
-use Laravel\Cashier\Subscription;
-use Laravel\Cashier\SubscriptionBuilder\Contracts\SubscriptionBuilder as Contract;
+use Cashier\Mollie\Coupon\Contracts\CouponRepository;
+use Cashier\Mollie\Plan\Contracts\PlanRepository;
+use Cashier\Mollie\Subscription;
+use Cashier\Mollie\SubscriptionBuilder\Contracts\SubscriptionBuilder as Contract;
 
 /**
  * Creates and configures a subscription for an existing Mollie Mandate.
@@ -53,11 +53,11 @@ class MandatedSubscriptionBuilder implements Contract
     /**
      * The Plan being subscribed to.
      *
-     * @var \Laravel\Cashier\Plan\Plan
+     * @var \Cashier\Mollie\Plan\Plan
      */
     protected $plan;
 
-    /** @var \Laravel\Cashier\Coupon\Coupon */
+    /** @var \Cashier\Mollie\Coupon\Coupon */
     protected $coupon;
 
     /** @var bool */
@@ -73,7 +73,7 @@ class MandatedSubscriptionBuilder implements Contract
      * @param  string  $name
      * @param  string  $plan
      *
-     * @throws \Laravel\Cashier\Exceptions\PlanNotFoundException
+     * @throws \Cashier\Mollie\Exceptions\PlanNotFoundException
      */
     public function __construct(Model $owner, string $name, string $plan)
     {
@@ -87,9 +87,9 @@ class MandatedSubscriptionBuilder implements Contract
      * Create a new Cashier subscription.
      *
      * @return Subscription
-     * \Laravel\Cashier\Exceptions\CouponException
+     * \Cashier\Mollie\Exceptions\CouponException
      *
-     * @throws \Laravel\Cashier\Exceptions\InvalidMandateException
+     * @throws \Cashier\Mollie\Exceptions\InvalidMandateException
      */
     public function create()
     {
@@ -166,7 +166,7 @@ class MandatedSubscriptionBuilder implements Contract
     /**
      * Force the trial to end immediately.
      *
-     * @return \Laravel\Cashier\SubscriptionBuilder\Contracts\SubscriptionBuilder|void
+     * @return \Cashier\Mollie\SubscriptionBuilder\Contracts\SubscriptionBuilder|void
      */
     public function skipTrial()
     {
@@ -193,9 +193,9 @@ class MandatedSubscriptionBuilder implements Contract
      * Specify a coupon.
      *
      * @param  string  $coupon
-     * @return $this|\Laravel\Cashier\SubscriptionBuilder\Contracts\SubscriptionBuilder
+     * @return $this|\Cashier\Mollie\SubscriptionBuilder\Contracts\SubscriptionBuilder
      *
-     * @throws \Laravel\Cashier\Exceptions\CouponNotFoundException
+     * @throws \Cashier\Mollie\Exceptions\CouponNotFoundException
      */
     public function withCoupon(string $coupon)
     {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Cashier\Traits;
+namespace Cashier\Mollie\Traits;
 
-use Laravel\Cashier\Cashier;
+use Cashier\Mollie\Cashier;
 use Money\Money;
 
 trait FormatsAmount

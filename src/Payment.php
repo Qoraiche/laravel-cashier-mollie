@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Cashier;
+namespace Cashier\Mollie;
 
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Cashier\Mollie\Contracts\GetMolliePayment;
-use Laravel\Cashier\Mollie\Contracts\UpdateMolliePayment;
-use Laravel\Cashier\Order\ConvertsToMoney;
-use Laravel\Cashier\Traits\HasOwner;
+use Cashier\Mollie\Mollie\Contracts\GetMolliePayment;
+use Cashier\Mollie\Mollie\Contracts\UpdateMolliePayment;
+use Cashier\Mollie\Order\ConvertsToMoney;
+use Cashier\Mollie\Traits\HasOwner;
 use Mollie\Api\Resources\Payment as MolliePayment;
 use Mollie\Api\Types\PaymentStatus;
 use Money\Currency;
@@ -26,7 +26,7 @@ use Money\Money;
  * @property int amount_charged_back
  * @property string first_payment_actions
  * @property string mollie_mandate_id
- * @property \Laravel\Cashier\Order\Order order
+ * @property \Cashier\Mollie\Order\Order order
  *
  * @method static create(array $data)
  * @method static make(array $data)

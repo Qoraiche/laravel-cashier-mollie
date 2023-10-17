@@ -1,10 +1,10 @@
 <?php
 
-namespace Laravel\Cashier\Plan;
+namespace Cashier\Mollie\Plan;
 
 use Illuminate\Support\Str;
-use Laravel\Cashier\Plan\Contracts\IntervalGeneratorContract;
-use Laravel\Cashier\Subscription;
+use Cashier\Mollie\Plan\Contracts\IntervalGeneratorContract;
+use Cashier\Mollie\Subscription;
 
 class DefaultIntervalGenerator extends BaseIntervalGenerator implements IntervalGeneratorContract
 {
@@ -20,7 +20,7 @@ class DefaultIntervalGenerator extends BaseIntervalGenerator implements Interval
     }
 
     /**
-     * @param  \Laravel\Cashier\Subscription|null  $subscription
+     * @param  \Cashier\Mollie\Subscription|null  $subscription
      * @return \Carbon\Carbon|\Carbon\Traits\Modifiers
      */
     public function getEndOfNextSubscriptionCycle(Subscription $subscription = null)

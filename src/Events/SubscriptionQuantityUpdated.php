@@ -1,16 +1,16 @@
 <?php
 
-namespace Laravel\Cashier\Events;
+namespace Cashier\Mollie\Events;
 
 use Illuminate\Queue\SerializesModels;
-use Laravel\Cashier\Subscription;
+use Cashier\Mollie\Subscription;
 
 class SubscriptionQuantityUpdated
 {
     use SerializesModels;
 
     /**
-     * @var \Laravel\Cashier\Subscription
+     * @var \Cashier\Mollie\Subscription
      */
     public $subscription;
 

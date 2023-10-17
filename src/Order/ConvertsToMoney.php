@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Order;
+namespace Cashier\Mollie\Order;
 
 use Money\Currency;
 use Money\Money;

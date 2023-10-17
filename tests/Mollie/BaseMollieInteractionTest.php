@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Tests\Mollie;
+namespace Cashier\Mollie\Tests\Mollie;
 
-use Laravel\Cashier\Tests\BaseTestCase;
+use Cashier\Mollie\Tests\BaseTestCase;
 
 abstract class BaseMollieInteractionTest extends BaseTestCase
 {

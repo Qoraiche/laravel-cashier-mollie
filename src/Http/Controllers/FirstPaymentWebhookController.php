@@ -1,13 +1,13 @@
 <?php
 
-namespace Laravel\Cashier\Http\Controllers;
+namespace Cashier\Mollie\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Event;
-use Laravel\Cashier\Events\FirstPaymentFailed;
-use Laravel\Cashier\Events\FirstPaymentPaid;
-use Laravel\Cashier\FirstPayment\FirstPaymentHandler;
-use Laravel\Cashier\Mollie\Contracts\UpdateMolliePayment;
+use Cashier\Mollie\Events\FirstPaymentFailed;
+use Cashier\Mollie\Events\FirstPaymentPaid;
+use Cashier\Mollie\FirstPayment\FirstPaymentHandler;
+use Cashier\Mollie\Mollie\Contracts\UpdateMolliePayment;
 use Symfony\Component\HttpFoundation\Response;
 
 class FirstPaymentWebhookController extends BaseWebhookController

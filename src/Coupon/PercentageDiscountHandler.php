@@ -1,17 +1,17 @@
 <?php
 
-namespace Laravel\Cashier\Coupon;
+namespace Cashier\Mollie\Coupon;
 
-use Laravel\Cashier\Exceptions\CouponException;
-use Laravel\Cashier\Order\OrderItem;
-use Laravel\Cashier\Order\OrderItemCollection;
+use Cashier\Mollie\Exceptions\CouponException;
+use Cashier\Mollie\Order\OrderItem;
+use Cashier\Mollie\Order\OrderItemCollection;
 use Money\Money;
 
 class PercentageDiscountHandler extends BaseCouponHandler
 {
     /**
-     * @param  \Laravel\Cashier\Order\OrderItemCollection  $items
-     * @return \Laravel\Cashier\Order\OrderItemCollection
+     * @param  \Cashier\Mollie\Order\OrderItemCollection  $items
+     * @return \Cashier\Mollie\Order\OrderItemCollection
      */
     public function getDiscountOrderItems(OrderItemCollection $items)
     {
@@ -60,7 +60,7 @@ class PercentageDiscountHandler extends BaseCouponHandler
     }
 
     /**
-     * @param  \Laravel\Cashier\Order\OrderItem  $firstItem
+     * @param  \Cashier\Mollie\Order\OrderItem  $firstItem
      * @return int
      */
     protected function quantity(OrderItem $firstItem)
@@ -71,7 +71,7 @@ class PercentageDiscountHandler extends BaseCouponHandler
     }
 
     /**
-     * @param  \Laravel\Cashier\Order\OrderItem  $firstItem
+     * @param  \Cashier\Mollie\Order\OrderItem  $firstItem
      * @return float|int
      */
     protected function taxPercentage(OrderItem $firstItem)

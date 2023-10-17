@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\FirstPayment\Actions;
+namespace Cashier\Mollie\FirstPayment\Actions;
 
 use Illuminate\Database\Eloquent\Model;
 use Money\Money;
@@ -25,7 +25,7 @@ class AddBalance extends AddGenericOrderItem
     /**
      * Execute this action and return the created OrderItemCollection.
      *
-     * @return \Laravel\Cashier\Order\OrderItemCollection
+     * @return \Cashier\Mollie\Order\OrderItemCollection
      */
     public function execute()
     {

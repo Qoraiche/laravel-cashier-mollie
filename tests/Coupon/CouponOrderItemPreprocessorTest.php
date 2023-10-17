@@ -1,15 +1,15 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Coupon;
+namespace Cashier\Mollie\Tests\Coupon;
 
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Coupon\Contracts\CouponRepository;
-use Laravel\Cashier\Coupon\CouponOrderItemPreprocessor;
-use Laravel\Cashier\Order\OrderItemCollection;
-use Laravel\Cashier\Subscription;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Database\Factories\OrderItemFactory;
-use Laravel\Cashier\Tests\Database\Factories\SubscriptionFactory;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\Coupon\Contracts\CouponRepository;
+use Cashier\Mollie\Coupon\CouponOrderItemPreprocessor;
+use Cashier\Mollie\Order\OrderItemCollection;
+use Cashier\Mollie\Subscription;
+use Cashier\Mollie\Tests\BaseTestCase;
+use Cashier\Mollie\Tests\Database\Factories\OrderItemFactory;
+use Cashier\Mollie\Tests\Database\Factories\SubscriptionFactory;
 
 class CouponOrderItemPreprocessorTest extends BaseTestCase
 {
@@ -29,7 +29,7 @@ class CouponOrderItemPreprocessorTest extends BaseTestCase
         $item = OrderItemFactory::new()->make();
         $subscription->orderItems()->save($item);
 
-        /** @var \Laravel\Cashier\Coupon\Coupon $coupon */
+        /** @var \Cashier\Mollie\Coupon\Coupon $coupon */
         $coupon = app()->make(CouponRepository::class)->findOrFail('test-coupon');
         $redeemedCoupon = $coupon->redeemFor($subscription);
         $preprocessor = new CouponOrderItemPreprocessor();

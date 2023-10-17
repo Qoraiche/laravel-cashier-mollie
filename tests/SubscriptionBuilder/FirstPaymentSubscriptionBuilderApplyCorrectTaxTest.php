@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Cashier\Tests\SubscriptionBuilder;
+namespace Cashier\Mollie\Tests\SubscriptionBuilder;
 
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Mollie\Contracts\CreateMolliePayment;
-use Laravel\Cashier\Mollie\Contracts\GetMollieCustomer;
-use Laravel\Cashier\SubscriptionBuilder\FirstPaymentSubscriptionBuilder;
-use Laravel\Cashier\Tests\BaseTestCase;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\Mollie\Contracts\CreateMolliePayment;
+use Cashier\Mollie\Mollie\Contracts\GetMollieCustomer;
+use Cashier\Mollie\SubscriptionBuilder\FirstPaymentSubscriptionBuilder;
+use Cashier\Mollie\Tests\BaseTestCase;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Customer;
 use Mollie\Api\Resources\Payment;
@@ -62,7 +62,7 @@ class FirstPaymentSubscriptionBuilderApplyCorrectTaxTest extends BaseTestCase
     }
 
     /**
-     * @return \Laravel\Cashier\SubscriptionBuilder\FirstPaymentSubscriptionBuilder
+     * @return \Cashier\Mollie\SubscriptionBuilder\FirstPaymentSubscriptionBuilder
      */
     protected function getBuilder()
     {

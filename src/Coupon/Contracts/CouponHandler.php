@@ -1,23 +1,23 @@
 <?php
 
-namespace Laravel\Cashier\Coupon\Contracts;
+namespace Cashier\Mollie\Coupon\Contracts;
 
-use Laravel\Cashier\Coupon\Coupon;
-use Laravel\Cashier\Coupon\RedeemedCoupon;
-use Laravel\Cashier\Exceptions\CouponException;
-use Laravel\Cashier\Order\OrderItemCollection;
+use Cashier\Mollie\Coupon\Coupon;
+use Cashier\Mollie\Coupon\RedeemedCoupon;
+use Cashier\Mollie\Exceptions\CouponException;
+use Cashier\Mollie\Order\OrderItemCollection;
 
 interface CouponHandler
 {
     /**
      * @param  array  $context
-     * @return \Laravel\Cashier\Coupon\Contracts\CouponHandler
+     * @return \Cashier\Mollie\Coupon\Contracts\CouponHandler
      */
     public function withContext(array $context);
 
     /**
-     * @param  \Laravel\Cashier\Coupon\Coupon  $coupon
-     * @param  \Laravel\Cashier\Coupon\Contracts\AcceptsCoupons  $model
+     * @param  \Cashier\Mollie\Coupon\Coupon  $coupon
+     * @param  \Cashier\Mollie\Coupon\Contracts\AcceptsCoupons  $model
      * @return bool
      *
      * @throws \Throwable|CouponException
@@ -27,15 +27,15 @@ interface CouponHandler
     /**
      * Apply the coupon to the OrderItemCollection
      *
-     * @param  \Laravel\Cashier\Coupon\RedeemedCoupon  $redeemedCoupon
-     * @param  \Laravel\Cashier\Order\OrderItemCollection  $items
-     * @return \Laravel\Cashier\Order\OrderItemCollection
+     * @param  \Cashier\Mollie\Coupon\RedeemedCoupon  $redeemedCoupon
+     * @param  \Cashier\Mollie\Order\OrderItemCollection  $items
+     * @return \Cashier\Mollie\Order\OrderItemCollection
      */
     public function handle(RedeemedCoupon $redeemedCoupon, OrderItemCollection $items);
 
     /**
-     * @param  \Laravel\Cashier\Order\OrderItemCollection  $items
-     * @return \Laravel\Cashier\Order\OrderItemCollection
+     * @param  \Cashier\Mollie\Order\OrderItemCollection  $items
+     * @return \Cashier\Mollie\Order\OrderItemCollection
      */
     public function getDiscountOrderItems(OrderItemCollection $items);
 }

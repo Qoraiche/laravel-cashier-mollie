@@ -1,13 +1,13 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Order;
+namespace Cashier\Mollie\Tests\Order;
 
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Order\Invoice;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Database\Factories\OrderItemFactory;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\Order\Invoice;
+use Cashier\Mollie\Tests\BaseTestCase;
+use Cashier\Mollie\Tests\Database\Factories\OrderItemFactory;
 use Money\Currency;
 use Money\Money;
 

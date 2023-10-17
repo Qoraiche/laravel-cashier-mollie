@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Fixtures;
+namespace Cashier\Mollie\Tests\Fixtures;
 
-use Laravel\Cashier\Refunds\Refund as CashierRefund;
+use Cashier\Mollie\Refunds\Refund as CashierRefund;
 
 class Refund extends CashierRefund
 {

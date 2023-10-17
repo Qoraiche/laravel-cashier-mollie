@@ -1,16 +1,16 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Coupon;
+namespace Cashier\Mollie\Tests\Coupon;
 
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Coupon\Contracts\CouponRepository;
-use Laravel\Cashier\Coupon\CouponOrderItemPreprocessor;
-use Laravel\Cashier\Exceptions\CurrencyMismatchException;
-use Laravel\Cashier\Order\OrderItemCollection;
-use Laravel\Cashier\Subscription;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Database\Factories\OrderItemFactory;
-use Laravel\Cashier\Tests\Database\Factories\SubscriptionFactory;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\Coupon\Contracts\CouponRepository;
+use Cashier\Mollie\Coupon\CouponOrderItemPreprocessor;
+use Cashier\Mollie\Exceptions\CurrencyMismatchException;
+use Cashier\Mollie\Order\OrderItemCollection;
+use Cashier\Mollie\Subscription;
+use Cashier\Mollie\Tests\BaseTestCase;
+use Cashier\Mollie\Tests\Database\Factories\OrderItemFactory;
+use Cashier\Mollie\Tests\Database\Factories\SubscriptionFactory;
 
 class MultiCurrencyCouponOrderItemPreprocessorTest extends BaseTestCase
 {
@@ -35,7 +35,7 @@ class MultiCurrencyCouponOrderItemPreprocessorTest extends BaseTestCase
         $itemUsd = OrderItemFactory::new()->USD()->make();
         $subscriptionUsd->orderItems()->save($itemUsd);
 
-        /** @var \Laravel\Cashier\Coupon\Coupon $coupon */
+        /** @var \Cashier\Mollie\Coupon\Coupon $coupon */
         $usdCoupon = app()->make(CouponRepository::class)->findOrFail('usddiscount');
 
         $redeemedUsdCoupon = $usdCoupon->redeemFor($subscription);

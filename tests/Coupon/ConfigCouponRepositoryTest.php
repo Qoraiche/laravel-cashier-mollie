@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Coupon;
+namespace Cashier\Mollie\Tests\Coupon;
 
-use Laravel\Cashier\Coupon\ConfigCouponRepository;
-use Laravel\Cashier\Coupon\Contracts\CouponRepository;
-use Laravel\Cashier\Coupon\Coupon;
-use Laravel\Cashier\Exceptions\CouponNotFoundException;
-use Laravel\Cashier\Tests\BaseTestCase;
+use Cashier\Mollie\Coupon\ConfigCouponRepository;
+use Cashier\Mollie\Coupon\Contracts\CouponRepository;
+use Cashier\Mollie\Coupon\Coupon;
+use Cashier\Mollie\Exceptions\CouponNotFoundException;
+use Cashier\Mollie\Tests\BaseTestCase;
 
 class ConfigCouponRepositoryTest extends BaseTestCase
 {
@@ -26,7 +26,7 @@ class ConfigCouponRepositoryTest extends BaseTestCase
         ];
         $coupons = [
             'test-coupon' => [
-                'handler' => \Laravel\Cashier\Coupon\FixedDiscountHandler::class,
+                'handler' => \Cashier\Mollie\Coupon\FixedDiscountHandler::class,
                 'context' => [
                     'description' => 'Welcome to '.config('app.name'),
                     'discount' => [

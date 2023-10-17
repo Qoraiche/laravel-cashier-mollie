@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Refunds;
+namespace Cashier\Mollie\Refunds;
 
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 

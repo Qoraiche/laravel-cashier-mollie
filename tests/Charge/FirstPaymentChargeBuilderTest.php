@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Charge;
+namespace Cashier\Mollie\Tests\Charge;
 
-use Laravel\Cashier\Http\RedirectToCheckoutResponse;
-use Laravel\Cashier\Mollie\Contracts\CreateMollieCustomer;
-use Laravel\Cashier\Mollie\Contracts\CreateMolliePayment;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Fixtures\User;
+use Cashier\Mollie\Http\RedirectToCheckoutResponse;
+use Cashier\Mollie\Mollie\Contracts\CreateMollieCustomer;
+use Cashier\Mollie\Mollie\Contracts\CreateMolliePayment;
+use Cashier\Mollie\Tests\BaseTestCase;
+use Cashier\Mollie\Tests\Fixtures\User;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Customer;
 use Mollie\Api\Resources\Payment as MolliePayment;
@@ -36,12 +36,12 @@ class FirstPaymentChargeBuilderTest extends BaseTestCase
         $this->assertEquals(0, $owner->orderItems()->count());
         $this->assertEquals(0, $owner->orders()->count());
 
-        $item = new \Laravel\Cashier\Charge\ChargeItemBuilder($owner);
+        $item = new \Cashier\Mollie\Charge\ChargeItemBuilder($owner);
         $item->unitPrice(new Money(100, new Currency('EUR')));
         $item->description('Test Item');
         $chargeItem = $item->make();
 
-        $item2 = new \Laravel\Cashier\Charge\ChargeItemBuilder($owner);
+        $item2 = new \Cashier\Mollie\Charge\ChargeItemBuilder($owner);
         $item2->unitPrice(new Money(200, new Currency('EUR')));
         $item2->description('Test Item 2');
         $chargeItem2 = $item2->make();

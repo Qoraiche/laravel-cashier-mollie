@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Cashier\Tests;
+namespace Cashier\Mollie\Tests;
 
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\CashierServiceProvider;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\CashierServiceProvider;
 
 class CashierServiceProviderTest extends BaseTestCase
 {

@@ -1,14 +1,14 @@
 <?php
 
-namespace Laravel\Cashier\Tests\FirstPayment\Actions;
+namespace Cashier\Mollie\Tests\FirstPayment\Actions;
 
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Coupon\Contracts\CouponRepository;
-use Laravel\Cashier\FirstPayment\Actions\ApplySubscriptionCouponToPayment as Action;
-use Laravel\Cashier\Order\OrderItemCollection;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Database\Factories\OrderItemFactory;
-use Laravel\Cashier\Tests\Fixtures\User;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\Coupon\Contracts\CouponRepository;
+use Cashier\Mollie\FirstPayment\Actions\ApplySubscriptionCouponToPayment as Action;
+use Cashier\Mollie\Order\OrderItemCollection;
+use Cashier\Mollie\Tests\BaseTestCase;
+use Cashier\Mollie\Tests\Database\Factories\OrderItemFactory;
+use Cashier\Mollie\Tests\Fixtures\User;
 
 class ApplySubscriptionCouponToPaymentTest extends BaseTestCase
 {

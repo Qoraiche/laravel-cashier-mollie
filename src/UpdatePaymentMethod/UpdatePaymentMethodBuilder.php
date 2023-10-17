@@ -1,15 +1,15 @@
 <?php
 
-namespace Laravel\Cashier\UpdatePaymentMethod;
+namespace Cashier\Mollie\UpdatePaymentMethod;
 
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Cashier\FirstPayment\Actions\AddBalance;
-use Laravel\Cashier\FirstPayment\Actions\AddGenericOrderItem;
-use Laravel\Cashier\FirstPayment\FirstPaymentBuilder;
-use Laravel\Cashier\Http\RedirectToCheckoutResponse;
-use Laravel\Cashier\Plan\Contracts\PlanRepository;
-use Laravel\Cashier\Traits\HandlesMoneyRounding;
-use Laravel\Cashier\UpdatePaymentMethod\Contracts\UpdatePaymentMethodBuilder as Contract;
+use Cashier\Mollie\FirstPayment\Actions\AddBalance;
+use Cashier\Mollie\FirstPayment\Actions\AddGenericOrderItem;
+use Cashier\Mollie\FirstPayment\FirstPaymentBuilder;
+use Cashier\Mollie\Http\RedirectToCheckoutResponse;
+use Cashier\Mollie\Plan\Contracts\PlanRepository;
+use Cashier\Mollie\Traits\HandlesMoneyRounding;
+use Cashier\Mollie\UpdatePaymentMethod\Contracts\UpdatePaymentMethodBuilder as Contract;
 use Money\Money;
 
 class UpdatePaymentMethodBuilder implements Contract
@@ -82,7 +82,7 @@ class UpdatePaymentMethodBuilder implements Contract
     }
 
     /**
-     * @return \Laravel\Cashier\FirstPayment\Actions\AddBalance[]|\Laravel\Cashier\FirstPayment\Actions\AddGenericOrderItem[]
+     * @return \Cashier\Mollie\FirstPayment\Actions\AddBalance[]|\Cashier\Mollie\FirstPayment\Actions\AddGenericOrderItem[]
      */
     protected function getPaymentActions()
     {
@@ -94,7 +94,7 @@ class UpdatePaymentMethodBuilder implements Contract
     }
 
     /**
-     * @return \Laravel\Cashier\FirstPayment\Actions\AddBalance
+     * @return \Cashier\Mollie\FirstPayment\Actions\AddBalance
      */
     protected function addToBalanceAction()
     {
@@ -108,7 +108,7 @@ class UpdatePaymentMethodBuilder implements Contract
     }
 
     /**
-     * @return \Laravel\Cashier\FirstPayment\Actions\AddGenericOrderItem
+     * @return \Cashier\Mollie\FirstPayment\Actions\AddGenericOrderItem
      */
     protected function addGenericItemAction()
     {

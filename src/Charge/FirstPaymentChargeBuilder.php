@@ -1,11 +1,11 @@
 <?php
 
-namespace Laravel\Cashier\Charge;
+namespace Cashier\Mollie\Charge;
 
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Cashier\Charge\Contracts\ChargeBuilder as Contract;
-use Laravel\Cashier\FirstPayment\FirstPaymentBuilder;
-use Laravel\Cashier\Http\RedirectToCheckoutResponse;
+use Cashier\Mollie\Charge\Contracts\ChargeBuilder as Contract;
+use Cashier\Mollie\FirstPayment\FirstPaymentBuilder;
+use Cashier\Mollie\Http\RedirectToCheckoutResponse;
 
 class FirstPaymentChargeBuilder implements Contract
 {

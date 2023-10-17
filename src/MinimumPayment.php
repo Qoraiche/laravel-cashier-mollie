@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Cashier;
+namespace Cashier\Mollie;
 
-use Laravel\Cashier\Mollie\Contracts\GetMollieMethodMinimumAmount;
-use Laravel\Cashier\Order\Contracts\MinimumPayment as MinimumPaymentContract;
+use Cashier\Mollie\Mollie\Contracts\GetMollieMethodMinimumAmount;
+use Cashier\Mollie\Order\Contracts\MinimumPayment as MinimumPaymentContract;
 use Mollie\Api\Resources\Mandate;
 
 class MinimumPayment implements MinimumPaymentContract

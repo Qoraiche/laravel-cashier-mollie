@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Cashier\Tests;
+namespace Cashier\Mollie\Tests;
 
-use Laravel\Cashier\Cashier;
+use Cashier\Mollie\Cashier;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Payment as MolliePayment;
 

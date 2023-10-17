@@ -1,16 +1,16 @@
 <?php
 
-namespace Laravel\Cashier\Events;
+namespace Cashier\Mollie\Events;
 
 use Illuminate\Queue\SerializesModels;
-use Laravel\Cashier\Credit\Credit;
+use Cashier\Mollie\Credit\Credit;
 
 class BalanceTurnedStale
 {
     use SerializesModels;
 
     /**
-     * @var \Laravel\Cashier\Credit\Credit
+     * @var \Cashier\Mollie\Credit\Credit
      */
     public $credit;
 

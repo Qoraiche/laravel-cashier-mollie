@@ -1,14 +1,14 @@
 <?php
 
-namespace Laravel\Cashier\Tests\SubscriptionBuilder;
+namespace Cashier\Mollie\Tests\SubscriptionBuilder;
 
 use Carbon\Carbon;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Exceptions\CouponException;
-use Laravel\Cashier\Mollie\Contracts\GetMollieCustomer;
-use Laravel\Cashier\Mollie\Contracts\GetMollieMandate;
-use Laravel\Cashier\SubscriptionBuilder\MandatedSubscriptionBuilder;
-use Laravel\Cashier\Tests\BaseTestCase;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\Exceptions\CouponException;
+use Cashier\Mollie\Mollie\Contracts\GetMollieCustomer;
+use Cashier\Mollie\Mollie\Contracts\GetMollieMandate;
+use Cashier\Mollie\SubscriptionBuilder\MandatedSubscriptionBuilder;
+use Cashier\Mollie\Tests\BaseTestCase;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Customer;
 use Mollie\Api\Resources\Mandate;
@@ -108,7 +108,7 @@ class MandatedSubscriptionBuilderTest extends BaseTestCase
     }
 
     /**
-     * @return \Laravel\Cashier\SubscriptionBuilder\MandatedSubscriptionBuilder
+     * @return \Cashier\Mollie\SubscriptionBuilder\MandatedSubscriptionBuilder
      */
     protected function getBuilder()
     {

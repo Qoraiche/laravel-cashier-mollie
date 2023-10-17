@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Order;
+namespace Cashier\Mollie\Order;
 
 use Illuminate\Database\Eloquent\Collection as EloquentCollection;
 

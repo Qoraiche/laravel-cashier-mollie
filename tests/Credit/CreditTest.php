@@ -1,10 +1,10 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Credit;
+namespace Cashier\Mollie\Tests\Credit;
 
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Fixtures\User;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\Tests\BaseTestCase;
+use Cashier\Mollie\Tests\Fixtures\User;
 use Money\Money;
 
 class CreditTest extends BaseTestCase

@@ -1,13 +1,13 @@
 <?php
 
-namespace Laravel\Cashier\Charge;
+namespace Cashier\Mollie\Charge;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\FirstPayment\Actions\AddGenericOrderItem;
-use Laravel\Cashier\FirstPayment\Actions\BaseAction as FirstPaymentAction;
-use Laravel\Cashier\Order\OrderItem;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\FirstPayment\Actions\AddGenericOrderItem;
+use Cashier\Mollie\FirstPayment\Actions\BaseAction as FirstPaymentAction;
+use Cashier\Mollie\Order\OrderItem;
 use Money\Money;
 
 class ChargeItem

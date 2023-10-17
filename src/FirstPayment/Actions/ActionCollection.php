@@ -1,11 +1,11 @@
 <?php
 
-namespace Laravel\Cashier\FirstPayment\Actions;
+namespace Cashier\Mollie\FirstPayment\Actions;
 
 use Illuminate\Support\Collection;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Exceptions\CurrencyMismatchException;
-use Laravel\Cashier\Order\OrderItemCollection;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\Exceptions\CurrencyMismatchException;
+use Cashier\Mollie\Order\OrderItemCollection;
 use Money\Currency;
 use Money\Money;
 
@@ -62,7 +62,7 @@ class ActionCollection extends Collection
     {
         $payload = [];
         foreach ($this->items as $item) {
-            /** @var \Laravel\Cashier\FirstPayment\Actions\BaseAction $item */
+            /** @var \Cashier\Mollie\FirstPayment\Actions\BaseAction $item */
             $itemPayload = $item->getPayload();
 
             if (! empty($itemPayload)) {
@@ -74,13 +74,13 @@ class ActionCollection extends Collection
     }
 
     /**
-     * @return \Laravel\Cashier\Order\OrderItemCollection
+     * @return \Cashier\Mollie\Order\OrderItemCollection
      */
     public function processedOrderItems()
     {
         $orderItems = new OrderItemCollection;
 
-        /** @var \Laravel\Cashier\FirstPayment\Actions\BaseAction $action */
+        /** @var \Cashier\Mollie\FirstPayment\Actions\BaseAction $action */
         foreach ($this->items as $action) {
             $orderItems = $orderItems->concat($action->makeProcessedOrderItems());
         }

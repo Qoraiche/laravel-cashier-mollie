@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Cashier\Tests\SubscriptionBuilder;
+namespace Cashier\Mollie\Tests\SubscriptionBuilder;
 
-use Laravel\Cashier\Coupon\BaseCouponHandler;
-use Laravel\Cashier\Coupon\Contracts\AcceptsCoupons;
-use Laravel\Cashier\Coupon\Coupon;
-use Laravel\Cashier\Exceptions\CouponException;
-use Laravel\Cashier\Order\OrderItemCollection;
+use Cashier\Mollie\Coupon\BaseCouponHandler;
+use Cashier\Mollie\Coupon\Contracts\AcceptsCoupons;
+use Cashier\Mollie\Coupon\Coupon;
+use Cashier\Mollie\Exceptions\CouponException;
+use Cashier\Mollie\Order\OrderItemCollection;
 
 class InvalidatingCouponHandler extends BaseCouponHandler
 {

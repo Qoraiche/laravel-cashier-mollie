@@ -1,18 +1,18 @@
 <?php
 
-namespace Laravel\Cashier;
+namespace Cashier\Mollie;
 
 use Illuminate\Support\ServiceProvider;
-use Laravel\Cashier\Console\Commands\CashierInstall;
-use Laravel\Cashier\Console\Commands\CashierRun;
-use Laravel\Cashier\Console\Commands\CashierUpdate;
-use Laravel\Cashier\Coupon\ConfigCouponRepository;
-use Laravel\Cashier\Coupon\Contracts\CouponRepository;
-use Laravel\Cashier\Mollie\RegistersMollieInteractions;
-use Laravel\Cashier\Order\Contracts\MaximumPayment as MaximumPaymentContract;
-use Laravel\Cashier\Order\Contracts\MinimumPayment as MinimumPaymentContract;
-use Laravel\Cashier\Plan\ConfigPlanRepository;
-use Laravel\Cashier\Plan\Contracts\PlanRepository;
+use Cashier\Mollie\Console\Commands\CashierInstall;
+use Cashier\Mollie\Console\Commands\CashierRun;
+use Cashier\Mollie\Console\Commands\CashierUpdate;
+use Cashier\Mollie\Coupon\ConfigCouponRepository;
+use Cashier\Mollie\Coupon\Contracts\CouponRepository;
+use Cashier\Mollie\Mollie\RegistersMollieInteractions;
+use Cashier\Mollie\Order\Contracts\MaximumPayment as MaximumPaymentContract;
+use Cashier\Mollie\Order\Contracts\MinimumPayment as MinimumPaymentContract;
+use Cashier\Mollie\Plan\ConfigPlanRepository;
+use Cashier\Mollie\Plan\Contracts\PlanRepository;
 use Mollie\Laravel\MollieServiceProvider;
 
 class CashierServiceProvider extends ServiceProvider

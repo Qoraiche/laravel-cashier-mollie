@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Order\Contracts;
+namespace Cashier\Mollie\Order\Contracts;
 
 use Mollie\Api\Resources\Mandate;
 

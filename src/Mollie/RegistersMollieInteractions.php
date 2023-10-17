@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Mollie;
+namespace Cashier\Mollie\Mollie;
 
 use Illuminate\Contracts\Foundation\Application;
 

@@ -1,18 +1,18 @@
 <?php
 
-namespace Laravel\Cashier\Coupon;
+namespace Cashier\Mollie\Coupon;
 
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Coupon\Contracts\AcceptsCoupons;
-use Laravel\Cashier\Coupon\Contracts\CouponHandler;
-use Laravel\Cashier\Order\OrderItemCollection;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\Coupon\Contracts\AcceptsCoupons;
+use Cashier\Mollie\Coupon\Contracts\CouponHandler;
+use Cashier\Mollie\Order\OrderItemCollection;
 
 class Coupon
 {
     /** @var string */
     protected $name;
 
-    /** @var \Laravel\Cashier\Coupon\Contracts\CouponHandler */
+    /** @var \Cashier\Mollie\Coupon\Contracts\CouponHandler */
     protected $handler;
 
     /** @var array */
@@ -25,7 +25,7 @@ class Coupon
      * Coupon constructor.
      *
      * @param  string  $name
-     * @param  \Laravel\Cashier\Coupon\Contracts\CouponHandler  $handler
+     * @param  \Cashier\Mollie\Coupon\Contracts\CouponHandler  $handler
      * @param  array  $context
      */
     public function __construct(string $name, CouponHandler $handler, array $context = [])
@@ -45,7 +45,7 @@ class Coupon
     }
 
     /**
-     * @return \Laravel\Cashier\Coupon\Contracts\CouponHandler
+     * @return \Cashier\Mollie\Coupon\Contracts\CouponHandler
      */
     public function handler()
     {
@@ -72,7 +72,7 @@ class Coupon
 
     /**
      * @param $times
-     * @return \Laravel\Cashier\Coupon\Coupon
+     * @return \Cashier\Mollie\Coupon\Coupon
      *
      * @throws \LogicException|\Throwable
      */
@@ -86,8 +86,8 @@ class Coupon
     }
 
     /**
-     * @param  \Laravel\Cashier\Coupon\Contracts\AcceptsCoupons  $model
-     * @return \Laravel\Cashier\Coupon\RedeemedCoupon
+     * @param  \Cashier\Mollie\Coupon\Contracts\AcceptsCoupons  $model
+     * @return \Cashier\Mollie\Coupon\RedeemedCoupon
      */
     public function redeemFor(AcceptsCoupons $model)
     {
@@ -97,9 +97,9 @@ class Coupon
     /**
      * Check if the coupon can be applied to the model
      *
-     * @param  \Laravel\Cashier\Coupon\Contracts\AcceptsCoupons  $model
+     * @param  \Cashier\Mollie\Coupon\Contracts\AcceptsCoupons  $model
      *
-     * @throws \Throwable|\Laravel\Cashier\Exceptions\CouponException
+     * @throws \Throwable|\Cashier\Mollie\Exceptions\CouponException
      */
     public function validateFor(AcceptsCoupons $model)
     {

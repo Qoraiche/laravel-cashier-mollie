@@ -1,13 +1,13 @@
 <?php
 
-namespace Laravel\Cashier\UpdatePaymentMethod\Contracts;
+namespace Cashier\Mollie\UpdatePaymentMethod\Contracts;
 
 interface UpdatePaymentMethodBuilder
 {
     /**
      * Update payment method.
      *
-     * @return \Laravel\Cashier\Http\RedirectToCheckoutResponse
+     * @return \Cashier\Mollie\Http\RedirectToCheckoutResponse
      */
     public function create();
 }

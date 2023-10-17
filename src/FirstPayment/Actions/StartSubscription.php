@@ -1,15 +1,15 @@
 <?php
 
-namespace Laravel\Cashier\FirstPayment\Actions;
+namespace Cashier\Mollie\FirstPayment\Actions;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Coupon\Contracts\CouponRepository;
-use Laravel\Cashier\Order\OrderItemCollection;
-use Laravel\Cashier\Plan\Contracts\PlanRepository;
-use Laravel\Cashier\SubscriptionBuilder\Contracts\SubscriptionConfigurator;
-use Laravel\Cashier\SubscriptionBuilder\MandatedSubscriptionBuilder;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\Coupon\Contracts\CouponRepository;
+use Cashier\Mollie\Order\OrderItemCollection;
+use Cashier\Mollie\Plan\Contracts\PlanRepository;
+use Cashier\Mollie\SubscriptionBuilder\Contracts\SubscriptionConfigurator;
+use Cashier\Mollie\SubscriptionBuilder\MandatedSubscriptionBuilder;
 use Money\Currency;
 use Money\Money;
 
@@ -18,10 +18,10 @@ class StartSubscription extends BaseAction implements SubscriptionConfigurator
     /** @var string */
     protected $name;
 
-    /** @var \Laravel\Cashier\Plan\Plan */
+    /** @var \Cashier\Mollie\Plan\Plan */
     protected $plan;
 
-    /** @var \Laravel\Cashier\Coupon\Coupon */
+    /** @var \Cashier\Mollie\Coupon\Coupon */
     protected $coupon;
 
     /** @var \Carbon\Carbon */
@@ -36,7 +36,7 @@ class StartSubscription extends BaseAction implements SubscriptionConfigurator
     /** @var bool */
     protected $skipTrial;
 
-    /** @var null|\Laravel\Cashier\SubscriptionBuilder\MandatedSubscriptionBuilder */
+    /** @var null|\Cashier\Mollie\SubscriptionBuilder\MandatedSubscriptionBuilder */
     protected $builder;
 
     /** @var CouponRepository */
@@ -49,7 +49,7 @@ class StartSubscription extends BaseAction implements SubscriptionConfigurator
      * @param  string  $name
      * @param  string  $plan
      *
-     * @throws \Laravel\Cashier\Exceptions\PlanNotFoundException
+     * @throws \Cashier\Mollie\Exceptions\PlanNotFoundException
      */
     public function __construct(Model $owner, string $name, string $plan)
     {
@@ -139,7 +139,7 @@ class StartSubscription extends BaseAction implements SubscriptionConfigurator
     /**
      * Prepare a stub of OrderItems processed with the payment.
      *
-     * @return \Laravel\Cashier\Order\OrderItemCollection
+     * @return \Cashier\Mollie\Order\OrderItemCollection
      */
     public function makeProcessedOrderItems()
     {
@@ -173,9 +173,9 @@ class StartSubscription extends BaseAction implements SubscriptionConfigurator
      * Returns an OrderItemCollection ready for processing right away.
      * Another OrderItem is scheduled for the next billing cycle.
      *
-     * @return \Laravel\Cashier\Order\OrderItemCollection
+     * @return \Cashier\Mollie\Order\OrderItemCollection
      *
-     * @throws \Laravel\Cashier\Exceptions\PlanNotFoundException
+     * @throws \Cashier\Mollie\Exceptions\PlanNotFoundException
      * @throws \Throwable
      */
     public function execute()
@@ -210,7 +210,7 @@ class StartSubscription extends BaseAction implements SubscriptionConfigurator
      * @param  int  $trialDays
      * @return $this
      *
-     * @throws \Laravel\Cashier\Exceptions\PlanNotFoundException
+     * @throws \Cashier\Mollie\Exceptions\PlanNotFoundException
      * @throws \Throwable
      */
     public function trialDays(int $trialDays)
@@ -270,7 +270,7 @@ class StartSubscription extends BaseAction implements SubscriptionConfigurator
     }
 
     /**
-     * @return \Laravel\Cashier\Coupon\Coupon|null
+     * @return \Cashier\Mollie\Coupon\Coupon|null
      */
     public function coupon()
     {
@@ -283,7 +283,7 @@ class StartSubscription extends BaseAction implements SubscriptionConfigurator
      * @param  string  $coupon
      * @return $this
      *
-     * @throws \Laravel\Cashier\Exceptions\CouponNotFoundException
+     * @throws \Cashier\Mollie\Exceptions\CouponNotFoundException
      * @throws \Throwable
      */
     public function withCoupon(string $coupon)
@@ -319,9 +319,9 @@ class StartSubscription extends BaseAction implements SubscriptionConfigurator
     /**
      * Retrieve the subscription builder
      *
-     * @return \Laravel\Cashier\SubscriptionBuilder\MandatedSubscriptionBuilder
+     * @return \Cashier\Mollie\SubscriptionBuilder\MandatedSubscriptionBuilder
      *
-     * @throws \Throwable|\Laravel\Cashier\Exceptions\PlanNotFoundException
+     * @throws \Throwable|\Cashier\Mollie\Exceptions\PlanNotFoundException
      */
     public function builder()
     {

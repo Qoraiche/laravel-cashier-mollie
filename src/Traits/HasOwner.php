@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Traits;
+namespace Cashier\Mollie\Traits;
 
 trait HasOwner
 {

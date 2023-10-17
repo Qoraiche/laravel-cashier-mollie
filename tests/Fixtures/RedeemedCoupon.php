@@ -1,8 +1,8 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Fixtures;
+namespace Cashier\Mollie\Tests\Fixtures;
 
-use Laravel\Cashier\Coupon\RedeemedCoupon as CashierRedeemedCoupon;
+use Cashier\Mollie\Coupon\RedeemedCoupon as CashierRedeemedCoupon;
 
 class RedeemedCoupon extends CashierRedeemedCoupon
 {

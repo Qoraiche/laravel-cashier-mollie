@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Tests\Mollie;
+namespace Cashier\Mollie\Tests\Mollie;
 
-use Laravel\Cashier\Mollie\Contracts\CreateMolliePayment;
+use Cashier\Mollie\Mollie\Contracts\CreateMolliePayment;
 use Mollie\Api\Resources\Payment;
 
 class CreateMolliePaymentTest extends BaseMollieInteractionTest

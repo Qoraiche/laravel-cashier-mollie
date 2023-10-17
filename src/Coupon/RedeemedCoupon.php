@@ -1,12 +1,12 @@
 <?php
 
-namespace Laravel\Cashier\Coupon;
+namespace Cashier\Mollie\Coupon;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Cashier\Coupon\Contracts\AcceptsCoupons;
-use Laravel\Cashier\Coupon\Contracts\CouponRepository;
-use Laravel\Cashier\Order\OrderItemCollection;
+use Cashier\Mollie\Coupon\Contracts\AcceptsCoupons;
+use Cashier\Mollie\Coupon\Contracts\CouponRepository;
+use Cashier\Mollie\Order\OrderItemCollection;
 
 /**
  * @method static create(array $array)
@@ -28,9 +28,9 @@ class RedeemedCoupon extends Model
     protected $guarded = [];
 
     /**
-     * @param  \Laravel\Cashier\Coupon\Coupon  $coupon
-     * @param  \Laravel\Cashier\Coupon\Contracts\AcceptsCoupons  $model
-     * @return \Illuminate\Database\Eloquent\Model|\Laravel\Cashier\Coupon\RedeemedCoupon
+     * @param  \Cashier\Mollie\Coupon\Coupon  $coupon
+     * @param  \Cashier\Mollie\Coupon\Contracts\AcceptsCoupons  $model
+     * @return \Illuminate\Database\Eloquent\Model|\Cashier\Mollie\Coupon\RedeemedCoupon
      */
     public static function record(Coupon $coupon, AcceptsCoupons $model)
     {
@@ -56,7 +56,7 @@ class RedeemedCoupon extends Model
     }
 
     /**
-     * @return \Laravel\Cashier\Coupon\Contracts\CouponHandler
+     * @return \Cashier\Mollie\Coupon\Contracts\CouponHandler
      */
     public function handler()
     {
@@ -74,8 +74,8 @@ class RedeemedCoupon extends Model
     }
 
     /**
-     * @param  \Laravel\Cashier\Order\OrderItemCollection  $items
-     * @return \Laravel\Cashier\Order\OrderItemCollection
+     * @param  \Cashier\Mollie\Order\OrderItemCollection  $items
+     * @return \Cashier\Mollie\Order\OrderItemCollection
      */
     public function applyTo(OrderItemCollection $items)
     {

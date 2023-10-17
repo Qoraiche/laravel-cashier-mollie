@@ -1,10 +1,10 @@
 <?php
 
-namespace Laravel\Cashier\Credit;
+namespace Cashier\Mollie\Credit;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use Laravel\Cashier\Traits\HasOwner;
+use Cashier\Mollie\Traits\HasOwner;
 use Money\Currency;
 use Money\Money;
 
@@ -19,7 +19,7 @@ class Credit extends Model
      *
      * @param  Model  $owner
      * @param  \Money\Money  $amount
-     * @return Model|\Laravel\Cashier\Credit\Credit
+     * @return Model|\Cashier\Mollie\Credit\Credit
      */
     public static function addAmountForOwner(Model $owner, Money $amount)
     {

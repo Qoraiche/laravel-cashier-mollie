@@ -1,6 +1,6 @@
 <?php
 
-namespace Laravel\Cashier\Http;
+namespace Cashier\Mollie\Http;
 
 use Illuminate\Http\RedirectResponse;
 use Mollie\Api\Resources\Payment;
@@ -13,7 +13,7 @@ class RedirectToCheckoutResponse extends RedirectResponse
     /**
      * @param  \Mollie\Api\Resources\Payment  $payment
      * @param  array  $context
-     * @return \Laravel\Cashier\Http\RedirectToCheckoutResponse
+     * @return \Cashier\Mollie\Http\RedirectToCheckoutResponse
      */
     public static function forPayment(Payment $payment, array $context = [])
     {
@@ -33,7 +33,7 @@ class RedirectToCheckoutResponse extends RedirectResponse
 
     /**
      * @param  \Mollie\Api\Resources\Payment  $payment
-     * @return \Laravel\Cashier\Http\RedirectToCheckoutResponse
+     * @return \Cashier\Mollie\Http\RedirectToCheckoutResponse
      */
     protected function setPayment(Payment $payment)
     {

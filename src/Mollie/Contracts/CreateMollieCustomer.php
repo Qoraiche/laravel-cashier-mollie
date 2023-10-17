@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Laravel\Cashier\Mollie\Contracts;
+namespace Cashier\Mollie\Mollie\Contracts;
 
 use Mollie\Api\Resources\Customer;
 

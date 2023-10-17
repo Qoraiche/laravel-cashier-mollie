@@ -1,14 +1,14 @@
 <?php
 
-namespace Laravel\Cashier\Tests\UpdatePaymentMethod;
+namespace Cashier\Mollie\Tests\UpdatePaymentMethod;
 
 use Illuminate\Support\Facades\Event;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Events\MandateUpdated;
-use Laravel\Cashier\FirstPayment\Actions\AddGenericOrderItem;
-use Laravel\Cashier\FirstPayment\FirstPaymentHandler;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Fixtures\User;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\Events\MandateUpdated;
+use Cashier\Mollie\FirstPayment\Actions\AddGenericOrderItem;
+use Cashier\Mollie\FirstPayment\FirstPaymentHandler;
+use Cashier\Mollie\Tests\BaseTestCase;
+use Cashier\Mollie\Tests\Fixtures\User;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Payment;
 

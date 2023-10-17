@@ -1,9 +1,9 @@
 <?php
 
-namespace Laravel\Cashier\Events;
+namespace Cashier\Mollie\Events;
 
 use Illuminate\Queue\SerializesModels;
-use Laravel\Cashier\Order\Order;
+use Cashier\Mollie\Order\Order;
 
 class FirstPaymentPaid
 {

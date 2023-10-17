@@ -1,13 +1,13 @@
 <?php
 
-namespace Laravel\Cashier\Tests\Order;
+namespace Cashier\Mollie\Tests\Order;
 
 use Carbon\Carbon;
 use Illuminate\Support\Str;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Order\OrderNumberGenerator;
-use Laravel\Cashier\Tests\BaseTestCase;
-use Laravel\Cashier\Tests\Database\Factories\OrderFactory;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\Order\OrderNumberGenerator;
+use Cashier\Mollie\Tests\BaseTestCase;
+use Cashier\Mollie\Tests\Database\Factories\OrderFactory;
 
 class OrderNumberGeneratorTest extends BaseTestCase
 {

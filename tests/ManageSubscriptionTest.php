@@ -1,19 +1,19 @@
 <?php
 
-namespace Laravel\Cashier\Tests;
+namespace Cashier\Mollie\Tests;
 
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Event;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Events\SubscriptionQuantityUpdated;
-use Laravel\Cashier\Events\SubscriptionResumed;
-use Laravel\Cashier\Events\SubscriptionStarted;
-use Laravel\Cashier\Mollie\Contracts\CreateMolliePayment;
-use Laravel\Cashier\Mollie\Contracts\GetMollieMandate;
-use Laravel\Cashier\Mollie\Contracts\GetMollieMethodMinimumAmount;
-use Laravel\Cashier\Mollie\GetMollieCustomer;
-use Laravel\Cashier\Mollie\GetMollieMethodMaximumAmount;
-use Laravel\Cashier\Tests\Fixtures\User;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\Events\SubscriptionQuantityUpdated;
+use Cashier\Mollie\Events\SubscriptionResumed;
+use Cashier\Mollie\Events\SubscriptionStarted;
+use Cashier\Mollie\Mollie\Contracts\CreateMolliePayment;
+use Cashier\Mollie\Mollie\Contracts\GetMollieMandate;
+use Cashier\Mollie\Mollie\Contracts\GetMollieMethodMinimumAmount;
+use Cashier\Mollie\Mollie\GetMollieCustomer;
+use Cashier\Mollie\Mollie\GetMollieMethodMaximumAmount;
+use Cashier\Mollie\Tests\Fixtures\User;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Customer;
 use Mollie\Api\Resources\Mandate;

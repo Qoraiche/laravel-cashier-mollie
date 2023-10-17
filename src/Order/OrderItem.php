@@ -1,17 +1,17 @@
 <?php
 
-namespace Laravel\Cashier\Order;
+namespace Cashier\Mollie\Order;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Database\Query\Builder;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Order\Contracts\InteractsWithOrderItems;
-use Laravel\Cashier\Order\Contracts\InvoicableItem;
-use Laravel\Cashier\Refunds\Contracts\IsRefundable;
-use Laravel\Cashier\Refunds\RefundItem;
-use Laravel\Cashier\Traits\FormatsAmount;
-use Laravel\Cashier\Traits\HasOwner;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\Order\Contracts\InteractsWithOrderItems;
+use Cashier\Mollie\Order\Contracts\InvoicableItem;
+use Cashier\Mollie\Refunds\Contracts\IsRefundable;
+use Cashier\Mollie\Refunds\RefundItem;
+use Cashier\Mollie\Traits\FormatsAmount;
+use Cashier\Mollie\Traits\HasOwner;
 
 /**
  * @property InteractsWithOrderItems orderable
@@ -171,7 +171,7 @@ class OrderItem extends Model implements InvoicableItem
     }
 
     /**
-     * @return \Laravel\Cashier\Order\OrderItemCollection
+     * @return \Cashier\Mollie\Order\OrderItemCollection
      */
     public function toCollection()
     {
@@ -181,7 +181,7 @@ class OrderItem extends Model implements InvoicableItem
     /**
      * Called right before processing the item into an order.
      *
-     * @return \Laravel\Cashier\Order\OrderItemCollection
+     * @return \Cashier\Mollie\Order\OrderItemCollection
      */
     public function preprocess()
     {
@@ -324,7 +324,7 @@ class OrderItem extends Model implements InvoicableItem
      * Handle a payment refund on the order item.
      * Invokes handlePaymentRefunded on the orderable model.
      *
-     * @param  \Laravel\Cashier\Refunds\RefundItem  $refundItem
+     * @param  \Cashier\Mollie\Refunds\RefundItem  $refundItem
      * @return $this
      */
     public function handlePaymentRefunded(RefundItem $refundItem)
@@ -343,7 +343,7 @@ class OrderItem extends Model implements InvoicableItem
      * Handle a failed payment refund on the order item.
      * Invokes handlePaymentRefundFailed on the orderable model.
      *
-     * @param  \Laravel\Cashier\Refunds\RefundItem  $refundItem
+     * @param  \Cashier\Mollie\Refunds\RefundItem  $refundItem
      * @return $this
      */
     public function handlePaymentRefundFailed(RefundItem $refundItem)

@@ -1,20 +1,20 @@
 <?php
 
-namespace Laravel\Cashier\Tests;
+namespace Cashier\Mollie\Tests;
 
 use Illuminate\Support\Facades\Event;
-use Laravel\Cashier\Cashier;
-use Laravel\Cashier\Events\OrderProcessed;
-use Laravel\Cashier\Events\SubscriptionPlanSwapped;
-use Laravel\Cashier\Mollie\Contracts\CreateMolliePayment;
-use Laravel\Cashier\Mollie\Contracts\GetMollieMandate;
-use Laravel\Cashier\Mollie\Contracts\GetMollieMethodMinimumAmount;
-use Laravel\Cashier\Mollie\GetMollieCustomer;
-use Laravel\Cashier\Mollie\GetMollieMethodMaximumAmount;
-use Laravel\Cashier\Order\Order;
-use Laravel\Cashier\Subscription;
-use Laravel\Cashier\Tests\Database\Factories\OrderItemFactory;
-use Laravel\Cashier\Tests\Database\Factories\SubscriptionFactory;
+use Cashier\Mollie\Cashier;
+use Cashier\Mollie\Events\OrderProcessed;
+use Cashier\Mollie\Events\SubscriptionPlanSwapped;
+use Cashier\Mollie\Mollie\Contracts\CreateMolliePayment;
+use Cashier\Mollie\Mollie\Contracts\GetMollieMandate;
+use Cashier\Mollie\Mollie\Contracts\GetMollieMethodMinimumAmount;
+use Cashier\Mollie\Mollie\GetMollieCustomer;
+use Cashier\Mollie\Mollie\GetMollieMethodMaximumAmount;
+use Cashier\Mollie\Order\Order;
+use Cashier\Mollie\Subscription;
+use Cashier\Mollie\Tests\Database\Factories\OrderItemFactory;
+use Cashier\Mollie\Tests\Database\Factories\SubscriptionFactory;
 use Mollie\Api\MollieApiClient;
 use Mollie\Api\Resources\Customer;
 use Mollie\Api\Resources\Mandate;
