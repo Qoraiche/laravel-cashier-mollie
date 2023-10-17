@@ -1,5 +1,5 @@
 {
-  "name": "mollie/laravel-cashier-mollie",
+  "name": "qoraiche/laravel-cashier-mollie",
   "description": "Laravel Cashier provides an expressive, fluent interface to Mollie's subscription billing services.",
   "keywords": [
     "mollie",
@@ -13,7 +13,7 @@
     "debit card",
     "Europe"
   ],
-  "homepage": "https://github.com/mollie/laravel-cashier-mollie",
+  "homepage": "https://github.com/qoraiche/laravel-cashier-mollie",
   "license": "MIT",
   "authors": [
     {
